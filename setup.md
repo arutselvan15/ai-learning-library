@@ -1,7 +1,7 @@
 ## Setup
 
-    mkdir ai-projects
-    cd ai-projects
+    mkdir gen-ai-with-llm
+    cd gen-ai-with-llm
     
     uv init
     uv venv
@@ -11,7 +11,7 @@
 
 Your folder will look like:
 
-    ai-projects/
+    gen-ai-with-llm/
     ├── pyproject.toml
     ├── uv.lock
     ├── .venv/

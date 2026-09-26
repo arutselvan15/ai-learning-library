@@ -1,4 +1,4 @@
-# AI Projects
+# Generative AI with LLM
 
 [setup](setup.md)
 
