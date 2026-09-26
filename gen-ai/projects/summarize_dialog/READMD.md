@@ -4,6 +4,8 @@
 
 Feed the conversation between two person to LLM and ask for summary.
 
+Lab: [Lab_1_summarize_dialogue.ipynb](Lab_1_summarize_dialogue.ipynb)
+
 ## Data set
 
 Hugging face have lot to data sets available, in this case we are using [knkarthick/dialogsum](https://huggingface.co/datasets/knkarthick/dialogsum).

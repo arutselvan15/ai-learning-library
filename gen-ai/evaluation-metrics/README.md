@@ -4,7 +4,11 @@
 
 How to formalize the improvement in the performance of a fine-tuned model?
 
-accuracy = correct predictions / total predictions
+```go
+            correct predictions
+accuracy = ____________________
+            total predictions
+```
 
 problem is LLM outputs are non-deterministic
 

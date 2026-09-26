@@ -124,10 +124,14 @@ How to avoid this?
 
 You can perform fine-tuning on multiple tasks at one time. Good multitask fine-tuning may require 50-100,000 examples across many tasks, and so will require more data and compute to train.
 
-### PEFT
+### PEFT (Parameter Efficient Fine Tuning)
 
 PEFT is a set of techniques that preserves the weights of the original LLM and trains only a small number of task-specific adapter layers and parameters. PEFT shows greater robustness to catastrophic forgetting since most of the pre-trained weights are left unchanged
 
+![peft.png](peft.png)
 
+Full fine-tuning result in bigger LLMs, PEFT result in smaller LLMs due to frozen weights.  PEFT is more efficient and cost effective.
 
+![full-ft.png](full-ft.png)
 
+![peft-2.png](peft-2.png)
