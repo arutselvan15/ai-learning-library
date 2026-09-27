@@ -1,7 +1,5 @@
 # Generative AI with Large Language Models
 
-Start with the [course study guide](docs/README.md) for a phase-by-phase learning path, all three labs in order, and a quick reference for later review.
+Start with the [course knowledge base](docs/README.md) for five phases, twelve chapters, and three labs in order. For later review, use the [quick reference](docs/quick-reference.md).
 
-- [Course topic notes](gen-ai/README.md) for deeper reading.
-- [Lecture transcript pointers](docs/subtitles/README.md) to revisit selected explanations.
-- [Local Python setup](setup.md) for the standalone examples. The notebooks have their own environment instructions.
+The [transcript index](docs/subtitles/README.md) maps the original lectures to phases. [Standalone Python setup](docs/setup.md) is separate from the notebooks' own environments.

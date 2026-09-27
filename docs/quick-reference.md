@@ -1,32 +1,19 @@
 # Quick Reference
 
-[Study guide](README.md) | [Transcripts by topic](subtitles/README.md)
+[Chapters](README.md) | [Transcript index](subtitles/README.md)
 
-Use this page to refresh the course without rerunning the notebooks. For the full explanation, follow the phase link in each row.
-
-| Topic | Remember | Revisit |
+| Question | Short answer | Chapter |
 | --- | --- | --- |
-| Lifecycle | Scope, select, adapt and evaluate, integrate, monitor. | [Phase 1](phase-1-foundations.md) |
-| Tokens and context | Models operate on tokens; prompt, retrieved text, and examples compete for context space. | [Phase 1](phase-1-foundations.md) |
-| Transformer families | Encoder-only for representations; encoder-decoder for text-to-text tasks; decoder-only for autoregressive generation. | [Phase 1](phase-1-foundations.md) |
-| Pre-training | General patterns come from large datasets and substantial compute; start with a model card before choosing a model. | [Phase 1](phase-1-foundations.md) |
-| Prompting | Zero-, one-, and few-shot examples steer behavior within the prompt without changing weights. | [Phase 2](phase-2-prompting.md), [Lab 1](../gen-ai/projects/summarize_dialog/Lab_1_summarize_dialogue.ipynb) |
-| Decoding | `max_new_tokens`, temperature, top-k, and top-p control generation, not training. | [Phase 2](phase-2-prompting.md) |
-| Evaluation | ROUGE measures reference overlap for summarization; BLEU is often used in translation. Inspect meaning and factuality as well. Benchmarks test broader skills and risks. | [Phase 2](phase-2-prompting.md) |
-| Fine-tuning | Full tuning updates model weights; LoRA trains compact updates on a frozen base. Compare both to a baseline on held-out examples. | [Phase 3](phase-3-fine-tuning.md), [Lab 2](../gen-ai/projects/fine-tuning/Lab_2_fine_tune_generative_ai_model.ipynb) |
-| Alignment | Preferences or a reward classifier score outputs; PPO updates the policy toward a reward, which is only a proxy for quality. | [Phase 4](phase-4-alignment.md), [Lab 3](../gen-ai/projects/rlhf/Lab_3_fine_tune_model_to_detoxify_summaries.ipynb) |
-| Optimization | Distillation changes the model; quantization changes representation precision; pruning removes weights. Measure quality after each. | [Phase 5](phase-5-applications.md) |
-| Applications | RAG supplies external context; PAL uses code for calculations; ReAct-style flows coordinate reasoning and tool use. | [Phase 5](phase-5-applications.md) |
+| Where do I start? | Define the task and evaluation criteria before choosing a model. | [01. Lifecycle](chapters/01-project-lifecycle.md) |
+| Which model family? | Encoder-only for representations, encoder-decoder for input-to-output text, decoder-only for next-token generation. | [02. Transformers](chapters/02-transformers.md) |
+| What makes a model expensive to train? | Weights plus gradients, optimizer state, activations, data, and compute. | [03. Pre-training](chapters/03-pretraining-compute.md) |
+| Prompt or train? | Prompt first; in-context examples do not update weights. | [04. Prompting](chapters/04-prompting.md), [05. Lab 1](chapters/05-lab-prompting.md) |
+| How do I judge a summary? | Use held-out examples, human review, and task metrics; ROUGE alone misses changed meaning. | [06. Evaluation](chapters/06-evaluation.md) |
+| Full tuning or LoRA? | Full tuning updates the model; LoRA trains smaller task-specific updates to a frozen base. Compare quality and resource cost. | [07. Fine-tuning](chapters/07-fine-tuning.md), [08. Lab 2](chapters/08-lab-fine-tuning.md) |
+| What does RLHF optimize? | A reward signal based on preferences or a proxy; the score is not the same as overall quality. | [09. RLHF](chapters/09-rlhf.md), [10. Lab 3](chapters/10-lab-rlhf.md) |
+| How do I reduce serving cost? | Measure distillation, quantization, or pruning on the target workload and hardware. | [11. Optimization](chapters/11-optimization.md) |
+| How do I use current facts or exact arithmetic? | Retrieve authorized sources for facts; call a validated computation tool for arithmetic. | [12. Applications](chapters/12-applications.md) |
 
-## Lab sequence in one minute
+**Lab order:** [Prompt only](chapters/05-lab-prompting.md) -> [full tuning and LoRA](chapters/08-lab-fine-tuning.md) -> [reward-based PPO](chapters/10-lab-rlhf.md). Keep representative input/output examples and the evaluation conditions for each comparison.
 
-1. **Lab 1:** Hold the model fixed; improve dialogue summaries using prompts and generation settings.
-2. **Lab 2:** Change the model with full fine-tuning and LoRA; compare summaries and ROUGE with the baseline.
-3. **Lab 3:** Optimize a summarization-tuned model with a toxicity reward and PPO; compare before/after toxicity **and** summary usefulness.
-
-## Pitfalls worth revisiting
-
-- A fluent output may be false. A high overlap score may miss a negation or an invented detail.
-- Larger models and lower-precision models are not automatically better for a given workload; compare on your task.
-- Notebook setup cells assume the course's environment and may install older package versions. Saved outputs are examples, not fresh validation.
-- Lecture examples, leaderboards, prices, and model cards can become outdated; verify current sources when building a real application.
+**Common trap:** Fluency is not correctness; a high n-gram overlap can hide a negation, and a lower toxicity score alone cannot prove a summary is useful or safe.
