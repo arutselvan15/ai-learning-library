@@ -16,6 +16,8 @@ Lab: [Lab_2_fine_tune_generative_ai_model.ipynb](Lab_2_fine_tune_generative_ai_m
 
 This lab is using [google/flan-t5-base](https://huggingface.co/google/flan-t5-base) model from hugging face using the [transformers](https://huggingface.co/docs/transformers/en/index) python package.
 
+Lab: [Lab_2_fine_tune_generative_ai_model.ipynb](Lab_2_fine_tune_generative_ai_model.ipynb)
+
 ## Load Model
 
 [load_model.py](load_model.py)

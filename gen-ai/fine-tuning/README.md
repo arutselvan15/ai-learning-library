@@ -2,6 +2,8 @@
 
 LLMs are pretrained and LLMs predicts the next word one at a time.
 
+Lab: [README.md](../projects/fine-tuning/README.md)
+
 ## PreTraining
 
 Example:
