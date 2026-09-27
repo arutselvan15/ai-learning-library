@@ -1,5 +1,7 @@
 # Generative AI
 
+New to the course? Follow the [phase-by-phase study guide](../docs/README.md). For a fast refresher, use the [quick reference](../docs/quick-reference.md).
+
 - [GenAI](gen-ai.md)
 - [Pretraining](pretraining/README.md)
 - [RAG](rag/README.md)
