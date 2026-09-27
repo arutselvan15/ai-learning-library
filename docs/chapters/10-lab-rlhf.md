@@ -4,7 +4,7 @@
 
 ## Goal and materials
 
-Start with a summarization-tuned FLAN-T5 model and measure how PPO with a hate-speech classifier reward changes its summaries. Follow [the original Lab 3 notebook](../projects/rlhf/Lab_3_fine_tune_model_to_detoxify_summaries.ipynb) and consult [the lab walkthrough transcript](../lecture-transcripts/lab-3-walkthrough.md) for the course explanation. This lab is conceptually downstream of Lab 2 but loads its own models; do not assume one notebook shares kernel state or saved artifacts with another.
+Start with a summarization-tuned FLAN-T5 model and measure how PPO with a hate-speech classifier reward changes its summaries. Follow [the original Lab 3 notebook](../../projects/rlhf/Lab_3_fine_tune_model_to_detoxify_summaries.ipynb) and consult [the lab walkthrough transcript](../lecture-transcripts/lab-3-walkthrough.md) for the course explanation. This lab is conceptually downstream of Lab 2 but loads its own models; do not assume one notebook shares kernel state or saved artifacts with another.
 
 ## Follow the notebook in this order
 

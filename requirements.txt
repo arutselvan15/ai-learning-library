@@ -1,0 +1,29 @@
+# Core model and dataset libraries
+datasets==2.17.0
+evaluate==0.4.0
+huggingface-hub>=0.36.2
+transformers==4.38.2
+torch==2.5.1
+torchdata==0.10.0
+sentencepiece>=0.2.0
+accelerate>=0.27.0
+
+# Fine-tuning and RLHF
+peft==0.3.0
+trl==0.7.11
+
+# Evaluation and data handling
+rouge-score==0.1.2
+numpy>=1.24
+pandas>=2.0,<3
+tqdm>=4.66
+
+# Provider examples and environment setup
+google-genai>=2.3.0
+openai>=2.37.0
+langchain>=0.1.0
+python-dotenv>=1.2.2
+
+# Runtime utilities
+psutil>=7.2.2
+truststore>=0.10.4

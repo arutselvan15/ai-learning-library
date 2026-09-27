@@ -4,7 +4,7 @@
 
 ## Goal and materials
 
-Compare FLAN-T5 summaries of DialogSum conversations with a bare prompt, explicit instructions, one or several examples, and different generation settings. The model weights stay fixed. Work through [the original Lab 1 notebook](../projects/summarize_dialog/Lab_1_summarize_dialogue.ipynb); the scripts in its folder are optional, smaller experiments. Read the [lab walkthrough transcript](../lecture-transcripts/lab-1-walkthrough.md) when a notebook step needs more context.
+Compare FLAN-T5 summaries of DialogSum conversations with a bare prompt, explicit instructions, one or several examples, and different generation settings. The model weights stay fixed. Work through [the original Lab 1 notebook](../../projects/dialogue-summarization/Lab_1_summarize_dialogue.ipynb); the scripts in its folder are optional, smaller experiments. Read the [lab walkthrough transcript](../lecture-transcripts/lab-1-walkthrough.md) when a notebook step needs more context.
 
 ## Follow the notebook in this order
 
@@ -15,7 +15,7 @@ Compare FLAN-T5 summaries of DialogSum conversations with a bare prompt, explici
 5. **One-shot and few-shot:** Add one or more labeled examples. Observe both summary quality and the growing prompt length.
 6. **Generation configuration:** Vary decoding settings one at a time and note whether a change improves fidelity or only surface style.
 
-Optional focused scripts: [dataset loading](../projects/summarize_dialog/load_dataset.py), [tokenizer](../projects/summarize_dialog/tokenizer.py), [zero-shot baseline](../projects/summarize_dialog/zero_shot_inference_1.py), [one-shot](../projects/summarize_dialog/one_shot_inference.py), [few-shot](../projects/summarize_dialog/few_shot_inference.py), [generation settings](../projects/summarize_dialog/generative_config_params.py). The notebook is the primary exercise; scripts may require independent setup.
+Optional focused scripts: [dataset loading](../../projects/dialogue-summarization/load_dataset.py), [tokenizer](../../projects/dialogue-summarization/tokenizer.py), [zero-shot baseline](../../projects/dialogue-summarization/zero_shot_inference_1.py), [one-shot](../../projects/dialogue-summarization/one_shot_inference.py), [few-shot](../../projects/dialogue-summarization/few_shot_inference.py), [generation settings](../../projects/dialogue-summarization/generative_config_params.py). The notebook is the primary exercise; scripts may require independent setup.
 
 ## Capture your result
 
