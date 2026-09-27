@@ -4,7 +4,7 @@
 
 ## Goal and materials
 
-Adapt FLAN-T5 for the same dialogue-summary task as Lab 1. Compare the original model, a fully fine-tuned model, and a base model with a LoRA adapter, using both generated examples and ROUGE. Use [the original Lab 2 notebook](../projects/fine-tuning/Lab_2_fine_tune_generative_ai_model.ipynb) as the exercise; [the lab lecture](../subtitles/subtitle%20%2821%29.txt) provides a narrated walkthrough.
+Adapt FLAN-T5 for the same dialogue-summary task as Lab 1. Compare the original model, a fully fine-tuned model, and a base model with a LoRA adapter, using both generated examples and ROUGE. Use [the original Lab 2 notebook](../projects/fine-tuning/Lab_2_fine_tune_generative_ai_model.ipynb) as the exercise; [the lab lecture](../lecture-transcripts/lab-2-walkthrough.md) provides a narrated walkthrough.
 
 ## Follow the notebook in this order
 

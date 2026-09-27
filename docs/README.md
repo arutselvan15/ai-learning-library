@@ -31,7 +31,7 @@ A chapter-by-chapter knowledge base built from the course transcripts, personal 
 
 ## Sources and use
 
-- [Transcript index](subtitles/README.md) organizes all 43 original subtitle files; these are preserved as raw primary sources. Chapters link the most relevant lectures directly.
+- [Transcript index](lecture-transcripts/README.md) organizes all 43 original lecture transcript files; these are preserved as raw primary sources. Chapters link the most relevant lectures directly.
 - [Week 1](slides/Weel1.pdf), [Week 2](slides/Week2.pdf), and [Week 3](slides/Week3.pdf) are the original PDFs (including the source filename `Weel1.pdf`). Chapters embed selected slide-derived images from `assets/` and link the appropriate PDF.
 - [Lab 1](projects/summarize_dialog/Lab_1_summarize_dialogue.ipynb), [Lab 2](projects/fine-tuning/Lab_2_fine_tune_generative_ai_model.ipynb), and [Lab 3](projects/rlhf/Lab_3_fine_tune_model_to_detoxify_summaries.ipynb) are the original exercises. Each lab chapter explains what to do and how to compare results.
 - [Setup for standalone examples](setup.md) is separate from notebook setup; use the dependency and hardware guidance in each notebook to run the labs. No notebook is automatically executed by reading these docs.

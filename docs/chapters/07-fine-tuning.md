@@ -23,8 +23,12 @@ For dialogue summarization, training pairs are dialogues and reference summaries
 
 Full training on only one task can cause **catastrophic forgetting**, degrading performance on unrelated tasks. Multitask instruction tuning mixes examples from several tasks to help retain wider capabilities, but requires suitable data and evaluation across tasks. PEFT can reduce the scope of model changes; it does not guarantee immunity from forgetting or eliminate inference cost.
 
+Forgetting is not automatically a failure: if the deployed system only needs one specialized task, sacrificing unrelated abilities may be an acceptable trade-off. If the model must remain general, mix tasks and test them after tuning. Large instruction-tuning efforts illustrate the data scale involved; FLAN-T5 used hundreds of datasets across many task categories, rather than relying on a handful of examples.
+
+In the dialogue-summary setting, a base model may produce a fluent summary that invents a hotel or city and omits participant names. Task tuning can improve faithfulness and preserve the names, but this must be measured on held-out dialogues rather than assumed from one example. LoRA rank also remains a quality-versus-parameter trade-off: lower rank is cheaper, but the best rank depends on the task and model.
+
 ![A model trained on one task may lose ability on another](../assets/fine-tuning/catas.png)
 
 **Checkpoint:** Which technique would you choose for three specialized summarization styles on the same base model? What would you test besides task-specific ROUGE before deploying it?
 
-Sources: [instruction tuning introduction](../subtitles/subtitle%20%2811%29.txt), [single-task tuning](../subtitles/subtitle%20%2813%29.txt), [multitask tuning](../subtitles/subtitle%20%2814%29.txt), [PEFT](../subtitles/subtitle%20%2818%29.txt), [LoRA](../subtitles/subtitle%20%2819%29.txt), [prompt tuning](../subtitles/subtitle%20%2820%29.txt); [Week 2 slides](../slides/Week2.pdf).
+Sources: [instruction tuning introduction](../lecture-transcripts/instruction-tuning-introduction.md), [single-task tuning](../lecture-transcripts/single-task-tuning-and-forgetting.md), [multitask tuning](../lecture-transcripts/multitask-fine-tuning.md), [PEFT](../lecture-transcripts/parameter-efficient-fine-tuning.md), [LoRA](../lecture-transcripts/lora.md), [prompt tuning](../lecture-transcripts/prompt-tuning.md); [Week 2 slides](../slides/Week2.pdf).

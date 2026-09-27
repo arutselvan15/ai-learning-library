@@ -4,7 +4,7 @@
 
 ## Goal and materials
 
-Compare FLAN-T5 summaries of DialogSum conversations with a bare prompt, explicit instructions, one or several examples, and different generation settings. The model weights stay fixed. Work through [the original Lab 1 notebook](../projects/summarize_dialog/Lab_1_summarize_dialogue.ipynb); the scripts in its folder are optional, smaller experiments. Read the [lab walkthrough transcript](../subtitles/subtitle%20%286%29.txt) when a notebook step needs more context.
+Compare FLAN-T5 summaries of DialogSum conversations with a bare prompt, explicit instructions, one or several examples, and different generation settings. The model weights stay fixed. Work through [the original Lab 1 notebook](../projects/summarize_dialog/Lab_1_summarize_dialogue.ipynb); the scripts in its folder are optional, smaller experiments. Read the [lab walkthrough transcript](../lecture-transcripts/lab-1-walkthrough.md) when a notebook step needs more context.
 
 ## Follow the notebook in this order
 

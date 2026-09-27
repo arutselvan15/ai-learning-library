@@ -21,6 +21,12 @@ Following an instruction does not guarantee a response is helpful, honest, or ha
 
 The third lab simplifies this pattern. Rather than collecting human rankings in the notebook and training a new reward model from them, it uses a pretrained hate-speech classifier as a reward signal. A reduced classifier score on one dimension is not proof of safe or faithful summaries. More advanced approaches, such as AI-assisted feedback, still need criteria, oversight, and independent evaluation.
 
+### From rankings to a reward
+
+Raters should receive a clear criterion and rank multiple completions; overlapping assignments help measure consensus, and unclear instructions increase disagreement. A ranking of $N$ completions can produce up to $\binom{N}{2}$ preferred/rejected pairs. For three completions, that is three pairs. The reward model learns to assign a higher scalar score to the preferred completion, commonly using a pairwise loss based on $\sigma(r_{preferred} - r_{rejected})$.
+
+During PPO, a KL-divergence penalty measures how far the policy's token probabilities move from a reference policy. Without that constraint, the policy may discover exaggerated language or grammatical nonsense that scores well to the reward model. With PEFT, only adapter weights need updating while the underlying model can be reused for the reference and policy roles, reducing memory pressure. For a toxicity classifier, a simple evaluation is the average probability of the toxic or hateful class across generated completions, compared before and after training.
+
 **Checkpoint:** What is the difference between the summary-generating policy and the reward model? What failure would result from maximizing a reward score without checking output quality?
 
-Sources: [RLHF motivation](../subtitles/subtitle%20%2823%29.txt), [human feedback](../subtitles/subtitle%20%2825%29.txt), [reward model](../subtitles/subtitle%20%2826%29.txt), [PPO](../subtitles/subtitle%20%2827%29.txt), [reward hacking](../subtitles/subtitle%20%2828%29.txt), [scalable feedback](../subtitles/subtitle%20%2829%29.txt); [Week 3 slides](../slides/Week3.pdf).
+Sources: [RLHF motivation](../lecture-transcripts/model-misbehavior.md), [human feedback](../lecture-transcripts/collecting-human-preferences.md), [reward model](../lecture-transcripts/training-a-reward-model.md), [PPO](../lecture-transcripts/ppo-in-the-rlhf-loop.md), [reward hacking](../lecture-transcripts/rlhf-recap-and-reward-hacking.md), [scalable feedback](../lecture-transcripts/scaling-feedback-and-constitutional-ai.md); [Week 3 slides](../slides/Week3.pdf).

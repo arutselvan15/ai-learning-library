@@ -1,6 +1,6 @@
 # Quick Reference
 
-[Chapters](README.md) | [Transcript index](subtitles/README.md)
+[Chapters](README.md) | [Transcript index](lecture-transcripts/README.md)
 
 | Question | Short answer | Chapter |
 | --- | --- | --- |

@@ -19,6 +19,8 @@ An **n-gram** is a sequence of $n$ tokens: unigram for one token, bigram for two
 
 For reference "It is cold outside" and output "It is very cold outside", four of the reference's four unigrams match, and four of five output unigrams match: recall $=1$, precision $=0.8$, $F_1 \approx 0.89$. Replacing *very* with *not* can yield the same unigram counts but reverse meaning. Inspect semantics, not just the number.
 
+Clipping is important when a generated summary repeats a common word. If the reference contains *cold* once but the output says *cold cold cold cold*, the extra occurrences cannot all count as matches. Without clipping, repetition would inflate overlap scores; with clipping, the score reflects only the maximum count supported by the reference. Evaluate many representative examples rather than inferring model quality from one unusually good or bad output.
+
 ![ROUGE-1 precision, recall and F1 example](../assets/evaluation-metrics/r1-1.png)
 
 ![ROUGE-2 counts overlapping adjacent pairs](../assets/evaluation-metrics/r2-2.png)
@@ -35,4 +37,4 @@ GLUE and SuperGLUE test multiple language-understanding tasks. MMLU samples acad
 
 **Checkpoint:** What could ROUGE fail to detect in a summary that gets names right but reverses a decision? Which additional evaluation examples would you add before fine-tuning?
 
-Sources: [text metrics lecture](../subtitles/subtitle%20%2816%29.txt), [benchmark lecture](../subtitles/subtitle%20%2817%29.txt); [Week 2 slides](../slides/Week2.pdf). Scores and benchmark tables from course slides may be out of date.
+Sources: [text metrics lecture](../lecture-transcripts/rouge-and-bleu-evaluation.md), [benchmark lecture](../lecture-transcripts/evaluation-benchmarks.md); [Week 2 slides](../slides/Week2.pdf). Scores and benchmark tables from course slides may be out of date.

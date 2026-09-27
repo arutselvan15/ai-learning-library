@@ -27,4 +27,4 @@ An application team might include a product owner defining success, data enginee
 
 **Checkpoint:** Write down one dialogue-summary requirement that ROUGE alone cannot verify. For example, a summary must not reverse who agreed to do a task.
 
-Sources: [course introduction](../subtitles/subtitle%20%2800%29.txt), [capabilities](../subtitles/subtitle%20%28000%29.txt), [project lifecycle lecture](../subtitles/subtitle%20%285%29.txt). [Week 1 slides](../slides/Weel1.pdf) provide the original diagrams; use the image above for a quick visual refresher.
+Sources: [course introduction](../lecture-transcripts/course-introduction.md), [capabilities](../lecture-transcripts/llm-capabilities-and-use-cases.md), [project lifecycle lecture](../lecture-transcripts/generative-ai-project-lifecycle.md). [Week 1 slides](../slides/Weel1.pdf) provide the original diagrams; use the image above for a quick visual refresher.

@@ -21,8 +21,10 @@ In-context learning is not fine-tuning: if you start a fresh request without the
 - Top-k samples from the highest-probability $k$ candidates; top-p samples from a set whose cumulative probability reaches a threshold $p$.
 - Generation controls do not update the model or supply missing facts. Some combinations and defaults depend on the library and whether sampling is enabled.
 
+Greedy decoding repeatedly selects the single most likely next token. It is deterministic, but it can fall into repeated words or repeated sequences. Sampling gives lower-probability candidates a chance to be selected; for example, a token with probability $0.02$ has about a 2% chance on a draw from the active distribution. In Hugging Face Transformers, temperature, top-k, and top-p sampling generally require `do_sample=True`; always check the library's defaults rather than assuming a parameter is active.
+
 Keep the same dialogue and evaluation criteria when comparing prompts. For a summary, check who said what, important actions, omissions, and invented details. A natural-sounding but unfaithful summary is not a success.
 
 **Checkpoint:** Write a zero-shot summarization instruction, then add one example. What extra tokens does the demonstration cost, and what behavior do you expect it to clarify?
 
-Sources: [in-context prompting lecture](../subtitles/subtitle%20%283%29.txt), [generation controls lecture](../subtitles/subtitle%20%284%29.txt); [Week 1 slides](../slides/Weel1.pdf). Continue with [Lab 1](05-lab-prompting.md) to compare the techniques on real dialogues.
+Sources: [in-context prompting lecture](../lecture-transcripts/zero-shot-and-in-context-prompting.md), [generation controls lecture](../lecture-transcripts/generation-settings.md); [Week 1 slides](../slides/Weel1.pdf). Continue with [Lab 1](05-lab-prompting.md) to compare the techniques on real dialogues.
