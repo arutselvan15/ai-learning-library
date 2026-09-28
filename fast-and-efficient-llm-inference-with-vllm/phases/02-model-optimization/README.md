@@ -18,8 +18,8 @@ You can choose a quantization strategy, create a compressed checkpoint, and vali
 
 ## Source Transcripts
 
-- [LLM optimization fundamentals](../../transcripts/02-model-optimization/01-llm-optimization-fundamentals.txt)
-- [LLM Compressor lab](../../transcripts/02-model-optimization/02-llm-compressor-lab.txt)
+- [LLM optimization fundamentals](../../transcripts/02-model-optimization/01-llm-optimization-fundamentals.md)
+- [LLM Compressor lab](../../transcripts/02-model-optimization/02-llm-compressor-lab.md)
 
 ## Phase Checkpoint
 

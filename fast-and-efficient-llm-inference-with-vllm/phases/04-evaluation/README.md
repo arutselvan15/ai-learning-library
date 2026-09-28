@@ -17,8 +17,8 @@ You can define SLOs, benchmark streaming-aware performance, evaluate quality, an
 
 ## Source Transcripts
 
-- [Evaluation lab transcript](../../transcripts/04-evaluation/01-evaluation-lab.txt)
-- [Evaluation references](../../transcripts/04-evaluation/references.txt)
+- [Evaluation lab transcript](../../transcripts/04-evaluation/01-evaluation-lab.md)
+- [Evaluation references](../../transcripts/04-evaluation/references.md)
 
 ## Phase Checkpoint
 

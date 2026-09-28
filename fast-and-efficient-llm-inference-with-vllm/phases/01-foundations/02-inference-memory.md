@@ -4,7 +4,7 @@
 
 Understand token generation and the memory hierarchy that controls inference.
 
-Source transcript: [Inference memory fundamentals](../../transcripts/01-foundations/02-inference-memory-fundamentals.txt)
+Source transcript: [Inference memory fundamentals](../../transcripts/01-foundations/02-inference-memory-fundamentals.md)
 
 ## Learning Objectives
 

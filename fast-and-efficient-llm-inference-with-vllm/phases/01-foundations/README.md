@@ -17,8 +17,8 @@ There is no dedicated notebook for this phase. Complete the memory-sizing and KV
 
 ## Source Transcripts
 
-- [Why efficient LLM deployment matters](../../transcripts/01-foundations/01-why-efficient-llm-deployment-matters.txt)
-- [Inference memory fundamentals](../../transcripts/01-foundations/02-inference-memory-fundamentals.txt)
+- [Why efficient LLM deployment matters](../../transcripts/01-foundations/01-why-efficient-llm-deployment-matters.md)
+- [Inference memory fundamentals](../../transcripts/01-foundations/02-inference-memory-fundamentals.md)
 
 ## Phase Checkpoint
 

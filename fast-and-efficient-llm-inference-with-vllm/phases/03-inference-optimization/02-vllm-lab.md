@@ -4,7 +4,7 @@
 
 Operate a local inference server and observe its runtime behavior.
 
-Source transcript: [vLLM lab](../../transcripts/03-inference-optimization/02-vllm-lab.txt)
+Source transcript: [vLLM lab](../../transcripts/03-inference-optimization/02-vllm-lab.md)
 
 ## Notebook
 

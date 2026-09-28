@@ -4,7 +4,7 @@
 
 Learn how lower-precision representations reduce model size and data movement.
 
-Source transcript: [LLM optimization fundamentals](../../transcripts/02-model-optimization/01-llm-optimization-fundamentals.txt)
+Source transcript: [LLM optimization fundamentals](../../transcripts/02-model-optimization/01-llm-optimization-fundamentals.md)
 
 ## Learning Objectives
 

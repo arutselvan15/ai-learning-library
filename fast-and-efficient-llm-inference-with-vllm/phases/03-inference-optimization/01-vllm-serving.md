@@ -4,7 +4,7 @@
 
 Understand how an inference engine improves utilization without changing model weights.
 
-Source transcript: [Serving LLMs efficiently with vLLM](../../transcripts/03-inference-optimization/01-serving-llms-efficiently-with-vllm.txt)
+Source transcript: [Serving LLMs efficiently with vLLM](../../transcripts/03-inference-optimization/01-serving-llms-efficiently-with-vllm.md)
 
 ## Learning Objectives
 

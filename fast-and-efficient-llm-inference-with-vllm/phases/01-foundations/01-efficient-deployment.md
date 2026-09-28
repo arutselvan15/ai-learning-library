@@ -4,7 +4,7 @@
 
 Establish the business and engineering motivation for efficient inference.
 
-Source transcript: [Why efficient LLM deployment matters](../../transcripts/01-foundations/01-why-efficient-llm-deployment-matters.txt)
+Source transcript: [Why efficient LLM deployment matters](../../transcripts/01-foundations/01-why-efficient-llm-deployment-matters.md)
 
 ## Learning Objectives
 
