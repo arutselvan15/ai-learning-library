@@ -4,11 +4,11 @@
 
 Measure deployment performance and model quality together.
 
-Source transcript: [Evaluation lab](../../transcripts/04-evaluation/01-evaluation-lab.md) and [references](../../transcripts/04-evaluation/references.md)
+Source transcript: [Evaluation lab](transcript.md) and [references](references.md)
 
 ## Notebook
 
-Work through the [evaluation lab notebook](01-evaluation-lab.ipynb).
+Work through the [evaluation lab notebook](lab.ipynb).
 
 ## Learning Objectives
 
@@ -29,13 +29,13 @@ These are examples. Define targets from the user experience and business require
 
 ## Visual References
 
-![Evaluation and benchmarking as complementary activities](../../assets/04-evaluation/evaluation.png)
+![Evaluation and benchmarking as complementary activities](assets/evaluation.png)
 
-![Typical deployment planning use cases](../../assets/04-evaluation/use-cases-to-plan.png)
+![Typical deployment planning use cases](assets/use-cases-to-plan.png)
 
-![Common workload patterns for inference benchmarks](../../assets/04-evaluation/workload-patterns.png)
+![Common workload patterns for inference benchmarks](assets/workload-patterns.png)
 
-![The accuracy, performance, and cost trade-off](../../assets/04-evaluation/trade-off.png)
+![The accuracy, performance, and cost trade-off](assets/trade-off.png)
 
 ## Benchmark Dimensions
 
@@ -78,4 +78,4 @@ GPU and vLLM metrics -> Where is memory or scheduling pressure coming from?
 
 Make a deployment recommendation that accounts for user experience and model quality.
 
-Next: [Course catalog](../../README.md)
+Next: [Course catalog](../../../README.md)

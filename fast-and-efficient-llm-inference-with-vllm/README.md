@@ -12,15 +12,16 @@ https://www.deeplearning.ai/courses/fast-and-efficient-llm-inference-with-vllm
 
 | Phase | Focus | Chapters |
 | --- | --- | --- |
-| 1. Foundations | Inference flow, transformer computation, memory, and deployment economics | [Phase overview](phases/01-foundations/README.md), [Chapter 1](phases/01-foundations/01-efficient-deployment.md), [Chapter 2](phases/01-foundations/02-inference-memory.md) |
-| 2. Model optimization | Quantization, sparsification, calibration, and compression validation | [Phase overview](phases/02-model-optimization/README.md), [Chapter 1](phases/02-model-optimization/01-optimization-fundamentals.md), [Chapter 2](phases/02-model-optimization/02-llm-compressor-lab.md) |
-| 3. Inference optimization | Continuous batching, PagedAttention, prefix caching, and vLLM | [Phase overview](phases/03-inference-optimization/README.md), [Chapter 1](phases/03-inference-optimization/01-vllm-serving.md), [Chapter 2](phases/03-inference-optimization/02-vllm-lab.md) |
-| 4. Evaluation | SLOs, load patterns, latency percentiles, and model quality | [Phase overview](phases/04-evaluation/README.md), [Chapter 1](phases/04-evaluation/01-evaluation-benchmarking.md) |
+| 1. Foundations | Inference flow, transformer computation, memory, and deployment economics | [Phase overview](phases/01-foundations/README.md), [Chapter 1](phases/01-foundations/01-efficient-deployment/README.md), [Chapter 2](phases/01-foundations/02-inference-memory/README.md) |
+| 2. Model optimization | Quantization, sparsification, calibration, and compression validation | [Phase overview](phases/02-model-optimization/README.md), [Chapter 1](phases/02-model-optimization/01-optimization-fundamentals/README.md), [Chapter 2](phases/02-model-optimization/02-llm-compressor-lab/README.md) |
+| 3. Inference optimization | Continuous batching, PagedAttention, prefix caching, and vLLM | [Phase overview](phases/03-inference-optimization/README.md), [Chapter 1](phases/03-inference-optimization/01-vllm-serving/README.md), [Chapter 2](phases/03-inference-optimization/02-vllm-lab/README.md) |
+| 4. Evaluation | SLOs, load patterns, latency percentiles, and model quality | [Phase overview](phases/04-evaluation/README.md), [Chapter 1](phases/04-evaluation/01-evaluation-benchmarking/README.md) |
+| 5. Summary | Connect optimization, deployment, benchmarking, and final decisions | [Phase overview](phases/05-summary/README.md) |
 
 ## Learning Flow
 
 ```text
-Foundations -> Model optimization -> Inference optimization -> Evaluation
+Foundations -> Model optimization -> Inference optimization -> Evaluation -> Summary
 ```
 
 The course moves from understanding why inference is difficult, to changing the model, to improving runtime utilization, and finally to proving whether the result is deployable.
@@ -40,21 +41,13 @@ The course moves from understanding why inference is difficult, to changing the 
 | Phase | Lab work | Notebook |
 | --- | --- | --- |
 | 1. Foundations | Memory and KV-cache calculations in the chapter exercises | No dedicated notebook |
-| 2. Model optimization | [LLM Compressor Lab](phases/02-model-optimization/02-llm-compressor-lab.md) | [Open notebook](phases/02-model-optimization/02-llm-compressor-lab.ipynb) |
-| 3. Inference optimization | [vLLM Lab](phases/03-inference-optimization/02-vllm-lab.md) | [Open notebook](phases/03-inference-optimization/02-vllm-lab.ipynb) |
-| 4. Evaluation | [Evaluation Lab](phases/04-evaluation/01-evaluation-benchmarking.md) | [Open notebook](phases/04-evaluation/01-evaluation-lab.ipynb) |
+| 2. Model optimization | [LLM Compressor Lab](phases/02-model-optimization/02-llm-compressor-lab/README.md) | [Open notebook](phases/02-model-optimization/02-llm-compressor-lab/lab.ipynb) |
+| 3. Inference optimization | [vLLM Lab](phases/03-inference-optimization/02-vllm-lab/README.md) | [Open notebook](phases/03-inference-optimization/02-vllm-lab/lab.ipynb) |
+| 4. Evaluation | [Evaluation Lab](phases/04-evaluation/01-evaluation-benchmarking/README.md) | [Open notebook](phases/04-evaluation/01-evaluation-benchmarking/lab.ipynb) |
 
 ## Course Summary
 
-The course follows the operational path from model optimization to efficient serving and evidence-based benchmarking.
-
-![Course workflow: optimize, deploy, and benchmark](assets/summary/course.png)
-
-![Deployment decisions depend on quality, performance, and cost](assets/summary/how-fast-is-fast.png)
-
-![The model, hardware, and serving ecosystem](assets/summary/landscape.png)
-
-![Common quantization methods used in deployment](assets/summary/quantization-methods.png)
+Review the [Phase 5 summary](phases/05-summary/README.md) after completing the evaluation work.
 
 ## Transcripts
 
@@ -62,10 +55,10 @@ Raw lesson transcripts are organized by phase and linked from the corresponding 
 
 | Phase | Transcript source |
 | --- | --- |
-| 1. Foundations | [Foundation transcripts](transcripts/01-foundations/) |
-| 2. Model optimization | [Optimization transcripts](transcripts/02-model-optimization/) |
-| 3. Inference optimization | [Serving transcripts](transcripts/03-inference-optimization/) |
-| 4. Evaluation | [Evaluation transcript and references](transcripts/04-evaluation/) |
+| 1. Foundations | [Foundation transcripts](phases/01-foundations/README.md) |
+| 2. Model optimization | [Optimization transcripts](phases/02-model-optimization/README.md) |
+| 3. Inference optimization | [Serving transcripts](phases/03-inference-optimization/README.md) |
+| 4. Evaluation | [Evaluation transcript and references](phases/04-evaluation/README.md) |
 
 ## Scope
 

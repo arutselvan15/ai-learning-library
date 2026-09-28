@@ -4,11 +4,11 @@
 
 Operate a local inference server and observe its runtime behavior.
 
-Source transcript: [vLLM lab](../../transcripts/03-inference-optimization/02-vllm-lab.md)
+Source transcript: [vLLM lab](transcript.md)
 
 ## Notebook
 
-Work through the [vLLM lab notebook](02-vllm-lab.ipynb).
+Work through the [vLLM lab notebook](lab.ipynb).
 
 ## Starter Command
 
@@ -49,4 +49,4 @@ print(response.choices[0].text)
 
 Connect observed metrics to batching and caching behavior.
 
-Next: [Phase 4 - Evaluation](../04-evaluation/README.md)
+Next: [Phase 4 - Evaluation](../../04-evaluation/README.md)

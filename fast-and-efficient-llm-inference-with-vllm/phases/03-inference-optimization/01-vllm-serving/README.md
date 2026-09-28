@@ -4,7 +4,7 @@
 
 Understand how an inference engine improves utilization without changing model weights.
 
-Source transcript: [Serving LLMs efficiently with vLLM](../../transcripts/03-inference-optimization/01-serving-llms-efficiently-with-vllm.md)
+Source transcript: [Serving LLMs efficiently with vLLM](transcript.md)
 
 ## Learning Objectives
 
@@ -23,21 +23,21 @@ Source transcript: [Serving LLMs efficiently with vLLM](../../transcripts/03-inf
 
 ## Visual References
 
-![Static batching for variable-length requests](../../assets/03-inference-optimization/static-batching.png)
+![Static batching for variable-length requests](assets/static-batching.png)
 
-![Why batching improves GPU utilization](../../assets/03-inference-optimization/why-batching.png)
+![Why batching improves GPU utilization](assets/why-batching.png)
 
-![Continuous batching at token-generation time](../../assets/03-inference-optimization/continuous-batching.png)
+![Continuous batching at token-generation time](assets/continuous-batching.png)
 
-![KV-cache allocation for one request](../../assets/03-inference-optimization/kb-cache-1-req.png)
+![KV-cache allocation for one request](assets/kb-cache-1-req.png)
 
-![KV-cache allocation for multiple requests](../../assets/03-inference-optimization/kb-cache-2-req.png)
+![KV-cache allocation for multiple requests](assets/kb-cache-2-req.png)
 
-![Fragmentation in earlier KV-cache management](../../assets/03-inference-optimization/memory-mgmt-kv-cache.png)
+![Fragmentation in earlier KV-cache management](assets/memory-mgmt-kv-cache.png)
 
-![Prefix caching across shared prompts and turns](../../assets/03-inference-optimization/prefix-cache.png)
+![Prefix caching across shared prompts and turns](assets/prefix-cache.png)
 
-![Prefix-cache throughput benchmark](../../assets/03-inference-optimization/prefix-cache-benchmark.png)
+![Prefix-cache throughput benchmark](assets/prefix-cache-benchmark.png)
 
 ## Practice
 
@@ -49,4 +49,4 @@ Source transcript: [Serving LLMs efficiently with vLLM](../../transcripts/03-inf
 
 Explain why vLLM can serve more requests on the same hardware without changing the model.
 
-Next: [vLLM Lab](02-vllm-lab.md)
+Next: [vLLM Lab](../02-vllm-lab/README.md)

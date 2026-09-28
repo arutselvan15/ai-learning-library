@@ -8,17 +8,17 @@ You can define SLOs, benchmark streaming-aware performance, evaluate quality, an
 
 ## Chapter
 
-1. [Evaluation and Benchmarking](01-evaluation-benchmarking.md)
+1. [Evaluation and Benchmarking](01-evaluation-benchmarking/README.md)
 
 ## Lab Work
 
-- [Lab instructions](01-evaluation-benchmarking.md)
-- [Evaluation notebook](01-evaluation-lab.ipynb)
+- [Lab instructions](01-evaluation-benchmarking/README.md)
+- [Evaluation notebook](01-evaluation-benchmarking/lab.ipynb)
 
 ## Source Transcripts
 
-- [Evaluation lab transcript](../../transcripts/04-evaluation/01-evaluation-lab.md)
-- [Evaluation references](../../transcripts/04-evaluation/references.md)
+- [Evaluation lab transcript](01-evaluation-benchmarking/transcript.md)
+- [Evaluation references](01-evaluation-benchmarking/references.md)
 
 ## Phase Checkpoint
 

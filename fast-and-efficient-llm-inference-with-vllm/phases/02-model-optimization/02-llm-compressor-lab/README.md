@@ -4,25 +4,25 @@
 
 Compress a model and validate the result instead of trusting theoretical bit reduction.
 
-Source transcript: [LLM Compressor lab](../../transcripts/02-model-optimization/02-llm-compressor-lab.md)
+Source transcript: [LLM Compressor lab](transcript.md)
 
 ## Notebook
 
-Work through the [LLM Compressor lab notebook](02-llm-compressor-lab.ipynb).
+Work through the [LLM Compressor lab notebook](lab.ipynb).
 
 ## Visual References
 
-![Choosing a model and calibration dataset](../../assets/02-model-optimization/choose-model.png)
+![Choosing a model and calibration dataset](assets/choose-model.png)
 
-![Quantization algorithm decision space](../../assets/02-model-optimization/algorithms.png)
+![Quantization algorithm decision space](assets/algorithms.png)
 
-![Activation-aware weight quantization](../../assets/02-model-optimization/awq.png)
+![Activation-aware weight quantization](assets/awq.png)
 
-![GPTQ quantization](../../assets/02-model-optimization/gptq.png)
+![GPTQ quantization](assets/gptq.png)
 
-![Round-to-nearest quantization](../../assets/02-model-optimization/round-to-nearest.png)
+![Round-to-nearest quantization](assets/round-to-nearest.png)
 
-![LLM Compressor workflow](../../assets/02-model-optimization/llm-compressor.png)
+![LLM Compressor workflow](assets/llm-compressor.png)
 
 ## Workflow
 
@@ -55,4 +55,4 @@ Perplexity measures how surprised the model is by held-out text; lower is better
 
 Produce a compressed checkpoint and defend its use with measurements.
 
-Next: [Phase 3 - Inference Optimization](../03-inference-optimization/README.md)
+Next: [Phase 3 - Inference Optimization](../../03-inference-optimization/README.md)

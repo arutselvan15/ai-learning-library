@@ -4,7 +4,7 @@
 
 Learn how lower-precision representations reduce model size and data movement.
 
-Source transcript: [LLM optimization fundamentals](../../transcripts/02-model-optimization/01-llm-optimization-fundamentals.md)
+Source transcript: [LLM optimization fundamentals](transcript.md)
 
 ## Learning Objectives
 
@@ -23,27 +23,27 @@ Source transcript: [LLM optimization fundamentals](../../transcripts/02-model-op
 
 ## Visual References
 
-![Model size growth and the pressure to optimize](../../assets/02-model-optimization/model-size.png)
+![Model size growth and the pressure to optimize](assets/model-size.png)
 
-![LLM compression with quantization and sparsification](../../assets/02-model-optimization/llm-compression.png)
+![LLM compression with quantization and sparsification](assets/llm-compression.png)
 
-![Quantization and numerical precision](../../assets/02-model-optimization/quantization.png)
+![Quantization and numerical precision](assets/quantization.png)
 
-![Llama 4 parameter storage at different precisions](../../assets/02-model-optimization/llama-4-requirement.png)
+![Llama 4 parameter storage at different precisions](assets/llama-4-requirement.png)
 
-![Llama 4 optimization and GPU requirements](../../assets/02-model-optimization/llama-4-optimization.png)
+![Llama 4 optimization and GPU requirements](assets/llama-4-optimization.png)
 
-![Weight and activation quantization](../../assets/02-model-optimization/weight-actication-quantization.png)
+![Weight and activation quantization](assets/weight-actication-quantization.png)
 
-![Weight-only and weight-plus-activation quantization schemes](../../assets/02-model-optimization/quantization-schemes.png)
+![Weight-only and weight-plus-activation quantization schemes](assets/quantization-schemes.png)
 
-![Throughput and latency improvements from compression](../../assets/02-model-optimization/throughput-latency.png)
+![Throughput and latency improvements from compression](assets/throughput-latency.png)
 
-![Where quantization is applied inside an LLM](../../assets/02-model-optimization/where-does-quantization-fit.png)
+![Where quantization is applied inside an LLM](assets/where-does-quantization-fit.png)
 
-![Quality and deployment trade-offs for compressed models](../../assets/02-model-optimization/performance-of-the-model.png)
+![Quality and deployment trade-offs for compressed models](assets/performance-of-the-model.png)
 
-![Challenges that motivate LLM compression](../../assets/02-model-optimization/challenges.png)
+![Challenges that motivate LLM compression](assets/challenges.png)
 
 ## Algorithm Selection
 
@@ -64,4 +64,4 @@ Source transcript: [LLM optimization fundamentals](../../transcripts/02-model-op
 
 Choose a format based on hardware support, memory pressure, latency goals, and acceptable quality loss.
 
-Next: [LLM Compressor Lab](02-llm-compressor-lab.md)
+Next: [LLM Compressor Lab](../02-llm-compressor-lab/README.md)

@@ -8,8 +8,8 @@ You can trace a request through an LLM, explain autoregressive generation, estim
 
 ## Chapters
 
-1. [Why Efficient LLM Deployment Matters](01-efficient-deployment.md)
-2. [Inference Memory Fundamentals](02-inference-memory.md)
+1. [Why Efficient LLM Deployment Matters](01-efficient-deployment/README.md)
+2. [Inference Memory Fundamentals](02-inference-memory/README.md)
 
 ## Lab Work
 
@@ -17,8 +17,8 @@ There is no dedicated notebook for this phase. Complete the memory-sizing and KV
 
 ## Source Transcripts
 
-- [Why efficient LLM deployment matters](../../transcripts/01-foundations/01-why-efficient-llm-deployment-matters.md)
-- [Inference memory fundamentals](../../transcripts/01-foundations/02-inference-memory-fundamentals.md)
+- [Why efficient LLM deployment matters](01-efficient-deployment/transcript.md)
+- [Inference memory fundamentals](02-inference-memory/transcript.md)
 
 ## Phase Checkpoint
 

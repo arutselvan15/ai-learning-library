@@ -4,7 +4,7 @@
 
 Understand token generation and the memory hierarchy that controls inference.
 
-Source transcript: [Inference memory fundamentals](../../transcripts/01-foundations/02-inference-memory-fundamentals.md)
+Source transcript: [Inference memory fundamentals](transcript.md)
 
 ## Learning Objectives
 
@@ -23,19 +23,19 @@ Source transcript: [Inference memory fundamentals](../../transcripts/01-foundati
 
 ## Visual References
 
-![Inference request flow through a model, server, and accelerator](../../assets/01-foundations/inference.png)
+![Inference request flow through a model, server, and accelerator](assets/inference.png)
 
-![The components inside one transformer block](../../assets/01-foundations/inside-one-transformer-block.png)
+![The components inside one transformer block](assets/inside-one-transformer-block.png)
 
-![Query, key, and value computation in self-attention](../../assets/01-foundations/inside-self-attention.png)
+![Query, key, and value computation in self-attention](assets/inside-self-attention.png)
 
-![KV-cache creation and reuse during token generation](../../assets/01-foundations/kv-cache.png)
+![KV-cache creation and reuse during token generation](assets/kv-cache.png)
 
-![GPU memory hierarchy](../../assets/01-foundations/gpu-memory-hierarchy.png)
+![GPU memory hierarchy](assets/gpu-memory-hierarchy.png)
 
-![Model weights and KV-cache storage](../../assets/01-foundations/how-are-the-model-weight-and-kv-cache-stored.png)
+![Model weights and KV-cache storage](assets/how-are-the-model-weight-and-kv-cache-stored.png)
 
-![KV-cache growth by context length](../../assets/01-foundations/how-big-can-the-kv-cache-get.png)
+![KV-cache growth by context length](assets/how-big-can-the-kv-cache-get.png)
 
 ## Key Formula
 
@@ -56,4 +56,4 @@ For the Llama 3 70B example, this is about 320 KB per token, or 10 GB for 32K to
 
 Explain why KV-cache capacity limits concurrency even when model weights fit.
 
-Next: [Phase 2 - Model Optimization](../02-model-optimization/README.md)
+Next: [Phase 2 - Model Optimization](../../02-model-optimization/README.md)

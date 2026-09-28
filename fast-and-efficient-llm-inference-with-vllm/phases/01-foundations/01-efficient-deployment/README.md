@@ -4,7 +4,7 @@
 
 Establish the business and engineering motivation for efficient inference.
 
-Source transcript: [Why efficient LLM deployment matters](../../transcripts/01-foundations/01-why-efficient-llm-deployment-matters.md)
+Source transcript: [Why efficient LLM deployment matters](transcript.md)
 
 ## Learning Objectives
 
@@ -22,17 +22,17 @@ Source transcript: [Why efficient LLM deployment matters](../../transcripts/01-f
 
 ## Visual References
 
-![The AI model ecosystem and self-hosting context](../../assets/01-foundations/ai-model-echo-system.png)
+![The AI model ecosystem and self-hosting context](assets/ai-model-echo-system.png)
 
-![Hardware requirements for running an LLM](../../assets/01-foundations/hardware-requirement.png)
+![Hardware requirements for running an LLM](assets/hardware-requirement.png)
 
-![Measurable accuracy and performance targets](../../assets/01-foundations/measurable-targets.png)
+![Measurable accuracy and performance targets](assets/measurable-targets.png)
 
-![The accuracy, performance, and cost trade-off](../../assets/01-foundations/trade-off.png)
+![The accuracy, performance, and cost trade-off](assets/trade-off.png)
 
-![Model and inference optimization categories](../../assets/01-foundations/optimization.png)
+![Model and inference optimization categories](assets/optimization.png)
 
-![A local inference serving stack](../../assets/01-foundations/runnng-local.png)
+![A local inference serving stack](assets/runnng-local.png)
 
 ## Reference Example
 
@@ -48,4 +48,4 @@ A 70B model in BF16 requires about 140 GB for weights. A 32K-token request can r
 
 Explain why an accurate model may still be unusable in production.
 
-Next: [Inference Memory Fundamentals](02-inference-memory.md)
+Next: [Inference Memory Fundamentals](../02-inference-memory/README.md)

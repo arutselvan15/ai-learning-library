@@ -8,18 +8,18 @@ You can choose a quantization strategy, create a compressed checkpoint, and vali
 
 ## Chapters
 
-1. [LLM Optimization Fundamentals](01-optimization-fundamentals.md)
-2. [LLM Compressor Lab](02-llm-compressor-lab.md)
+1. [LLM Optimization Fundamentals](01-optimization-fundamentals/README.md)
+2. [LLM Compressor Lab](02-llm-compressor-lab/README.md)
 
 ## Lab Work
 
-- [Lab instructions](02-llm-compressor-lab.md)
-- [LLM Compressor notebook](02-llm-compressor-lab.ipynb)
+- [Lab instructions](02-llm-compressor-lab/README.md)
+- [LLM Compressor notebook](02-llm-compressor-lab/lab.ipynb)
 
 ## Source Transcripts
 
-- [LLM optimization fundamentals](../../transcripts/02-model-optimization/01-llm-optimization-fundamentals.md)
-- [LLM Compressor lab](../../transcripts/02-model-optimization/02-llm-compressor-lab.md)
+- [LLM optimization fundamentals](01-optimization-fundamentals/transcript.md)
+- [LLM Compressor lab](02-llm-compressor-lab/transcript.md)
 
 ## Phase Checkpoint
 
