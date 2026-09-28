@@ -1,6 +1,6 @@
-# 04. Prompting and Generation
+# Chapter 1 - Prompting and Generation
 
-[Previous: 03. Pre-training](03-pretraining-compute.md) | [Contents](../README.md) | Next: [05. Lab 1](05-lab-prompting.md)
+[Previous: Phase 1, Chapter 3: Pre-training](../01-understand-and-select/03-pretraining-compute.md) | [Contents](../../README.md) | Next: [Chapter 2: Lab 1](02-lab-prompting.md)
 
 ## First try the model as it is
 
@@ -27,4 +27,4 @@ Keep the same dialogue and evaluation criteria when comparing prompts. For a sum
 
 **Checkpoint:** Write a zero-shot summarization instruction, then add one example. What extra tokens does the demonstration cost, and what behavior do you expect it to clarify?
 
-Sources: [in-context prompting lecture](../lecture-transcripts/zero-shot-and-in-context-prompting.md), [generation controls lecture](../lecture-transcripts/generation-settings.md); [Week 1 slides](../slides/Weel1.pdf). Continue with [Lab 1](05-lab-prompting.md) to compare the techniques on real dialogues.
+Sources: [in-context prompting lecture](../../lecture-transcripts/zero-shot-and-in-context-prompting.md), [generation controls lecture](../../lecture-transcripts/generation-settings.md); [Week 1 slides](../../slides/Weel1.pdf). Continue with [Lab 1](02-lab-prompting.md) to compare the techniques on real dialogues.

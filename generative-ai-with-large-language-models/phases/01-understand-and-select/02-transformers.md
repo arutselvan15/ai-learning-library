@@ -1,6 +1,6 @@
-# 02. Tokens, Transformers, and Model Families
+# Chapter 2 - Tokens, Transformers, and Model Families
 
-[Previous: 01. Lifecycle](01-project-lifecycle.md) | [Contents](../README.md) | Next: [03. Pre-training](03-pretraining-compute.md)
+[Previous: Chapter 1: Lifecycle](01-project-lifecycle.md) | [Contents](../../README.md) | Next: [Chapter 3: Pre-training](03-pretraining-compute.md)
 
 ## Why transformers?
 
@@ -8,7 +8,7 @@ Language depends on context. The meaning of *bank*, for instance, depends on nei
 
 An RNN must carry information through a sequence one step at a time. As the sequence grows, early context has to pass through many recurrent updates, so relevant information can be weakened or lost before the model uses it. A transformer can compare token representations across the sequence in parallel, making long-range relationships easier to learn during training.
 
-![Encoder-only, encoder-decoder and decoder-only transformer families](../assets/model/architecture/transformers.png)
+![Encoder-only, encoder-decoder and decoder-only transformer families](../../assets/model/architecture/transformers.png)
 
 Text is split into **tokens** (often words or word pieces), converted to IDs by a tokenizer, and represented numerically by the model. Token counts depend on the tokenizer, so a word count is only a rough estimate of context and usage cost. An embedding is a learned vector representation; token IDs themselves are not embeddings.
 
@@ -20,11 +20,11 @@ Text is split into **tokens** (often words or word pieces), converted to IDs by 
 | Encoder-decoder (sequence-to-sequence) | Encode input and generate target text; T5 uses span corruption | Summarization and translation | T5, FLAN-T5, BART |
 | Decoder-only | Predict the next token using preceding context | Open-ended generation | GPT-style models, BLOOM |
 
-![Masked-token prediction with bidirectional context](../assets/model/architecture/encoder.png)
+![Masked-token prediction with bidirectional context](../../assets/model/architecture/encoder.png)
 
-![T5-style span reconstruction with an encoder and decoder](../assets/model/architecture/encoder-decoder.png)
+![T5-style span reconstruction with an encoder and decoder](../../assets/model/architecture/encoder-decoder.png)
 
-![Next-token prediction using previous tokens](../assets/model/architecture/decoder.png)
+![Next-token prediction using previous tokens](../../assets/model/architecture/decoder.png)
 
 Attention assigns different weights to other token positions when constructing each token's representation. **Multi-head attention** repeats this with several learned projections: one head may track relationships between people, while another tracks an action or a syntactic pattern. Positional information is added because attention alone does not preserve whether a token appeared first, middle, or last. The result combines content relationships with word order.
 
@@ -36,4 +36,4 @@ At inference time, the model consumes a prompt within its supported context leng
 
 **Checkpoint:** Explain why an encoder-decoder model suits dialogue summarization and why the tokenizer matters when a dialogue is long.
 
-Sources: [transformer motivation](../lecture-transcripts/from-rnns-to-transformers.md), [attention](../lecture-transcripts/transformers-and-attention.md), [architectures and tokenization](../lecture-transcripts/model-architectures-and-tokenization.md). See the architecture illustrations above when comparing model families.
+Sources: [transformer motivation](../../lecture-transcripts/from-rnns-to-transformers.md), [attention](../../lecture-transcripts/transformers-and-attention.md), [architectures and tokenization](../../lecture-transcripts/model-architectures-and-tokenization.md). See the architecture illustrations above when comparing model families.

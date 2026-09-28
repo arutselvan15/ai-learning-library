@@ -1,12 +1,12 @@
-# 01. The LLM Project Lifecycle
+# Chapter 1 - The LLM Project Lifecycle
 
-[Contents](../README.md) | Next: [02. Transformers](02-transformers.md)
+[Contents](../../README.md) | Next: [Chapter 2: Transformers](02-transformers.md)
 
 ## The big picture
 
 Generative AI produces new text, images, audio, or other content from learned patterns. This course focuses on large language models (LLMs), especially a recurring example: summarizing a dialogue. A model is only one part of a useful application. Before experimenting, decide what the output must do, how it will be evaluated, and what resources and risks are acceptable.
 
-![Scope, select, adapt and align, then integrate an LLM application](../assets/project-lifecycle-and-roles/lifecycle.png)
+![Scope, select, adapt and align, then integrate an LLM application](../../assets/project-lifecycle-and-roles/lifecycle.png)
 
 The lifecycle has four connected stages:
 
@@ -19,12 +19,12 @@ These stages are iterative: an evaluation failure may send you back to improve t
 
 ## The course's running example
 
-- [Lab 1](05-lab-prompting.md) uses the DialogSum dataset and FLAN-T5 for summaries without changing model weights.
-- [Lab 2](08-lab-fine-tuning.md) compares full fine-tuning and LoRA on summarization.
-- [Lab 3](10-lab-rlhf.md) uses a toxicity reward and PPO to adjust a summarization-tuned model.
+- [Lab 1](02-lab-prompting.md) uses the DialogSum dataset and FLAN-T5 for summaries without changing model weights.
+- [Lab 2](02-lab-fine-tuning.md) compares full fine-tuning and LoRA on summarization.
+- [Lab 3](02-lab-rlhf.md) uses a toxicity reward and PPO to adjust a summarization-tuned model.
 
 An application team might include a product owner defining success, data engineers preparing sources, ML engineers adapting/evaluating the model, and software engineers integrating it. The roles overlap; the task definition and evaluation need shared ownership.
 
 **Checkpoint:** Write down one dialogue-summary requirement that ROUGE alone cannot verify. For example, a summary must not reverse who agreed to do a task.
 
-Sources: [course introduction](../lecture-transcripts/course-introduction.md), [capabilities](../lecture-transcripts/llm-capabilities-and-use-cases.md), [project lifecycle lecture](../lecture-transcripts/generative-ai-project-lifecycle.md). [Week 1 slides](../slides/Weel1.pdf) provide the original diagrams; use the image above for a quick visual refresher.
+Sources: [course introduction](../../lecture-transcripts/course-introduction.md), [capabilities](../../lecture-transcripts/llm-capabilities-and-use-cases.md), [project lifecycle lecture](../../lecture-transcripts/generative-ai-project-lifecycle.md). [Week 1 slides](../../slides/Weel1.pdf) provide the original diagrams; use the image above for a quick visual refresher.
