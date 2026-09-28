@@ -4,6 +4,10 @@
 
 Compress a model and validate the result instead of trusting theoretical bit reduction.
 
+## Notebook
+
+Work through the [LLM Compressor lab notebook](02-llm-compressor-lab.ipynb).
+
 ## Workflow
 
 1. Choose a model and representative calibration dataset.

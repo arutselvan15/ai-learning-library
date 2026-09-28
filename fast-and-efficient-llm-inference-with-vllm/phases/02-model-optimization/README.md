@@ -11,6 +11,11 @@ You can choose a quantization strategy, create a compressed checkpoint, and vali
 1. [LLM Optimization Fundamentals](01-optimization-fundamentals.md)
 2. [LLM Compressor Lab](02-llm-compressor-lab.md)
 
+## Lab Work
+
+- [Lab instructions](02-llm-compressor-lab.md)
+- [LLM Compressor notebook](02-llm-compressor-lab.ipynb)
+
 ## Phase Checkpoint
 
 Defend a compression choice using hardware support, memory savings, calibration evidence, and quality results.

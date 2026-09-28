@@ -33,6 +33,15 @@ The course moves from understanding why inference is difficult, to changing the 
 - [ ] Compare quality with an uncompressed or published baseline.
 - [ ] Write a deployment recommendation covering accuracy, performance, and cost.
 
+## Labs
+
+| Phase | Lab work | Notebook |
+| --- | --- | --- |
+| 1. Foundations | Memory and KV-cache calculations in the chapter exercises | No dedicated notebook |
+| 2. Model optimization | [LLM Compressor Lab](phases/02-model-optimization/02-llm-compressor-lab.md) | [Open notebook](phases/02-model-optimization/02-llm-compressor-lab.ipynb) |
+| 3. Inference optimization | [vLLM Lab](phases/03-inference-optimization/02-vllm-lab.md) | [Open notebook](phases/03-inference-optimization/02-vllm-lab.ipynb) |
+| 4. Evaluation | [Evaluation Lab](phases/04-evaluation/01-evaluation-benchmarking.md) | [Open notebook](phases/04-evaluation/01-evaluation-lab.ipynb) |
+
 ## Scope
 
 This course focuses on inference fundamentals, compression, vLLM, and evaluation. The broader roadmap continues into Kubernetes GPUs, gateways, distributed inference, retrieval models, observability, multi-tenancy, and the capstone platform.

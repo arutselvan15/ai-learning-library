@@ -10,6 +10,11 @@ You can define SLOs, benchmark streaming-aware performance, evaluate quality, an
 
 1. [Evaluation and Benchmarking](01-evaluation-benchmarking.md)
 
+## Lab Work
+
+- [Lab instructions](01-evaluation-benchmarking.md)
+- [Evaluation notebook](01-evaluation-lab.ipynb)
+
 ## Phase Checkpoint
 
 Prove that an optimized model meets both the quality threshold and the performance SLO for its target workload.

@@ -4,6 +4,10 @@
 
 Operate a local inference server and observe its runtime behavior.
 
+## Notebook
+
+Work through the [vLLM lab notebook](02-vllm-lab.ipynb).
+
 ## Starter Command
 
 ```bash

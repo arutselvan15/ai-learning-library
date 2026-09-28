@@ -4,6 +4,10 @@
 
 Measure deployment performance and model quality together.
 
+## Notebook
+
+Work through the [evaluation lab notebook](01-evaluation-lab.ipynb).
+
 ## Learning Objectives
 
 - Define SLOs before benchmarking.
@@ -62,4 +66,4 @@ GPU and vLLM metrics -> Where is memory or scheduling pressure coming from?
 
 Make a deployment recommendation that accounts for user experience and model quality.
 
-Next: [Course catalog](../../LEARNING_GUIDE.md)
+Next: [Course catalog](../../README.md)
