@@ -8,6 +8,20 @@ Compress a model and validate the result instead of trusting theoretical bit red
 
 Work through the [LLM Compressor lab notebook](02-llm-compressor-lab.ipynb).
 
+## Visual References
+
+![Choosing a model and calibration dataset](../../assets/02-model-optimization/choose-model.png)
+
+![Quantization algorithm decision space](../../assets/02-model-optimization/algorithms.png)
+
+![Activation-aware weight quantization](../../assets/02-model-optimization/awq.png)
+
+![GPTQ quantization](../../assets/02-model-optimization/gptq.png)
+
+![Round-to-nearest quantization](../../assets/02-model-optimization/round-to-nearest.png)
+
+![LLM Compressor workflow](../../assets/02-model-optimization/llm-compressor.png)
+
 ## Workflow
 
 1. Choose a model and representative calibration dataset.

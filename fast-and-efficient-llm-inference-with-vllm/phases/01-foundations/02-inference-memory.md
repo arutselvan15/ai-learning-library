@@ -19,6 +19,22 @@ Understand token generation and the memory hierarchy that controls inference.
 - KV entries are retained for active request tokens.
 - Data moves from CPU DRAM to GPU HBM to GPU SRAM and tensor cores.
 
+## Visual References
+
+![Inference request flow through a model, server, and accelerator](../../assets/01-foundations/inference.png)
+
+![The components inside one transformer block](../../assets/01-foundations/inside-one-transformer-block.png)
+
+![Query, key, and value computation in self-attention](../../assets/01-foundations/inside-self-attention.png)
+
+![KV-cache creation and reuse during token generation](../../assets/01-foundations/kv-cache.png)
+
+![GPU memory hierarchy](../../assets/01-foundations/gpu-memory-hierarchy.png)
+
+![Model weights and KV-cache storage](../../assets/01-foundations/how-are-the-model-weight-and-kv-cache-stored.png)
+
+![KV-cache growth by context length](../../assets/01-foundations/how-big-can-the-kv-cache-get.png)
+
 ## Key Formula
 
 ```text

@@ -18,6 +18,20 @@ Establish the business and engineering motivation for efficient inference.
 - GPU memory holds fixed model weights and growing per-request KV cache.
 - Deployment balances accuracy, performance, and cost.
 
+## Visual References
+
+![The AI model ecosystem and self-hosting context](../../assets/01-foundations/ai-model-echo-system.png)
+
+![Hardware requirements for running an LLM](../../assets/01-foundations/hardware-requirement.png)
+
+![Measurable accuracy and performance targets](../../assets/01-foundations/measurable-targets.png)
+
+![The accuracy, performance, and cost trade-off](../../assets/01-foundations/trade-off.png)
+
+![Model and inference optimization categories](../../assets/01-foundations/optimization.png)
+
+![A local inference serving stack](../../assets/01-foundations/runnng-local.png)
+
 ## Reference Example
 
 A 70B model in BF16 requires about 140 GB for weights. A 32K-token request can require roughly 10 GB of KV cache, so fitting the weights does not guarantee useful concurrency.

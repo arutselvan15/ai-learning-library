@@ -25,6 +25,16 @@ Work through the [evaluation lab notebook](01-evaluation-lab.ipynb).
 
 These are examples. Define targets from the user experience and business requirements.
 
+## Visual References
+
+![Evaluation and benchmarking as complementary activities](../../assets/04-evaluation/evaluation.png)
+
+![Typical deployment planning use cases](../../assets/04-evaluation/use-cases-to-plan.png)
+
+![Common workload patterns for inference benchmarks](../../assets/04-evaluation/workload-patterns.png)
+
+![The accuracy, performance, and cost trade-off](../../assets/04-evaluation/trade-off.png)
+
 ## Benchmark Dimensions
 
 - Synchronous: single-request baseline.

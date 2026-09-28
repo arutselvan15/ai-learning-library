@@ -19,6 +19,24 @@ Understand how an inference engine improves utilization without changing model w
 - A block table maps logical request tokens to physical KV blocks.
 - Prefix caching reuses KV blocks for shared prompts and earlier conversation turns.
 
+## Visual References
+
+![Static batching for variable-length requests](../../assets/03-inference-optimization/static-batching.png)
+
+![Why batching improves GPU utilization](../../assets/03-inference-optimization/why-batching.png)
+
+![Continuous batching at token-generation time](../../assets/03-inference-optimization/continuous-batching.png)
+
+![KV-cache allocation for one request](../../assets/03-inference-optimization/kb-cache-1-req.png)
+
+![KV-cache allocation for multiple requests](../../assets/03-inference-optimization/kb-cache-2-req.png)
+
+![Fragmentation in earlier KV-cache management](../../assets/03-inference-optimization/memory-mgmt-kv-cache.png)
+
+![Prefix caching across shared prompts and turns](../../assets/03-inference-optimization/prefix-cache.png)
+
+![Prefix-cache throughput benchmark](../../assets/03-inference-optimization/prefix-cache-benchmark.png)
+
 ## Practice
 
 - Draw two requests under static and continuous batching.

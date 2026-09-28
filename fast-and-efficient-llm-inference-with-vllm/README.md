@@ -42,6 +42,18 @@ The course moves from understanding why inference is difficult, to changing the 
 | 3. Inference optimization | [vLLM Lab](phases/03-inference-optimization/02-vllm-lab.md) | [Open notebook](phases/03-inference-optimization/02-vllm-lab.ipynb) |
 | 4. Evaluation | [Evaluation Lab](phases/04-evaluation/01-evaluation-benchmarking.md) | [Open notebook](phases/04-evaluation/01-evaluation-lab.ipynb) |
 
+## Course Summary
+
+The course follows the operational path from model optimization to efficient serving and evidence-based benchmarking.
+
+![Course workflow: optimize, deploy, and benchmark](assets/summary/course.png)
+
+![Deployment decisions depend on quality, performance, and cost](assets/summary/how-fast-is-fast.png)
+
+![The model, hardware, and serving ecosystem](assets/summary/landscape.png)
+
+![Common quantization methods used in deployment](assets/summary/quantization-methods.png)
+
 ## Scope
 
 This course focuses on inference fundamentals, compression, vLLM, and evaluation. The broader roadmap continues into Kubernetes GPUs, gateways, distributed inference, retrieval models, observability, multi-tenancy, and the capstone platform.
