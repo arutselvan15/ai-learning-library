@@ -6,6 +6,8 @@ Catalog for the transcript-derived learning material. Start with a phase overvie
 
 Build enough understanding to estimate inference memory, compress a model, operate vLLM, measure serving performance, evaluate quality, and make a deployment recommendation.
 
+https://www.deeplearning.ai/courses/fast-and-efficient-llm-inference-with-vllm
+
 ## Course Map
 
 | Phase | Focus | Chapters |
@@ -53,6 +55,17 @@ The course follows the operational path from model optimization to efficient ser
 ![The model, hardware, and serving ecosystem](assets/summary/landscape.png)
 
 ![Common quantization methods used in deployment](assets/summary/quantization-methods.png)
+
+## Transcripts
+
+Raw lesson transcripts are organized by phase and linked from the corresponding chapter pages.
+
+| Phase | Transcript source |
+| --- | --- |
+| 1. Foundations | [Foundation transcripts](transcripts/01-foundations/) |
+| 2. Model optimization | [Optimization transcripts](transcripts/02-model-optimization/) |
+| 3. Inference optimization | [Serving transcripts](transcripts/03-inference-optimization/) |
+| 4. Evaluation | [Evaluation transcript and references](transcripts/04-evaluation/) |
 
 ## Scope
 

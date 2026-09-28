@@ -4,6 +4,8 @@
 
 Understand token generation and the memory hierarchy that controls inference.
 
+Source transcript: [Inference memory fundamentals](../../transcripts/01-foundations/02-inference-memory-fundamentals.txt)
+
 ## Learning Objectives
 
 - Trace a prompt through the model, inference server, and accelerator.

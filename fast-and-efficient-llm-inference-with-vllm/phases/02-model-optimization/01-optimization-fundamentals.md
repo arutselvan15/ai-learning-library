@@ -4,6 +4,8 @@
 
 Learn how lower-precision representations reduce model size and data movement.
 
+Source transcript: [LLM optimization fundamentals](../../transcripts/02-model-optimization/01-llm-optimization-fundamentals.txt)
+
 ## Learning Objectives
 
 - Compare BF16, FP16, FP8, INT8, and INT4.

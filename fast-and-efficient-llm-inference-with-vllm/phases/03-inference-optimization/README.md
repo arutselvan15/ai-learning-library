@@ -16,6 +16,11 @@ You can explain and observe continuous batching, PagedAttention, prefix caching,
 - [Lab instructions](02-vllm-lab.md)
 - [vLLM notebook](02-vllm-lab.ipynb)
 
+## Source Transcripts
+
+- [Serving LLMs efficiently with vLLM](../../transcripts/03-inference-optimization/01-serving-llms-efficiently-with-vllm.txt)
+- [vLLM lab](../../transcripts/03-inference-optimization/02-vllm-lab.txt)
+
 ## Phase Checkpoint
 
 Show how request scheduling and KV-cache management improve utilization on the same hardware.

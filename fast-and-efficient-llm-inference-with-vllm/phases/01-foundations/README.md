@@ -15,6 +15,11 @@ You can trace a request through an LLM, explain autoregressive generation, estim
 
 There is no dedicated notebook for this phase. Complete the memory-sizing and KV-cache calculations in the chapter exercises before continuing.
 
+## Source Transcripts
+
+- [Why efficient LLM deployment matters](../../transcripts/01-foundations/01-why-efficient-llm-deployment-matters.txt)
+- [Inference memory fundamentals](../../transcripts/01-foundations/02-inference-memory-fundamentals.txt)
+
 ## Phase Checkpoint
 
 Explain why a model can fit in GPU memory for one request but fail under long-context concurrency.

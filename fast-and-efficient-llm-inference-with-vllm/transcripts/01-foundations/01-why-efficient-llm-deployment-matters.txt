@@ -1,0 +1,300 @@
+0:00
+You may have heard a lot about training AI models,
+0:01
+the massive GPU clusters, weeks of compute and billions of dollars.
+0:06
+But the majority of AI cost is in running models,
+0:08
+because training happens once, but inference happens
+0:11
+every single time a user sends a message.
+0:14
+So in this lesson, you'll see why efficient LLM deployment matters,
+0:17
+the explosion of open source models,
+0:19
+the real cost of running them in production,
+0:22
+and the two big categories of optimization,
+0:24
+model and inference. So, let's dive in.
+0:28
+In early 2023, there were essentially no competitive open source models.
+0:31
+And now we have thousands, even millions on Hugging Face
+0:34
+from every organization, even OpenAI themselves.
+0:38
+So, the challenge has shifted from, can I get
+0:40
+a good model to, can I run that model efficiently?
+0:42
+Why would you want to run
+0:44
+models yourself instead of calling an API?
+0:45
+Well, there's four big reasons. Firstly, Cost Savings.
+0:49
+Because instead of paying per token, you
+0:51
+can match model size to task difficulty.
+0:53
+Secondly, is Security because data never leaves your
+0:56
+environment. And that's quite important in industries like healthcare and financial services.
+1:01
+Third is Control. Models can upgrade or deprecate when you say so,
+1:05
+and there's no rate limits and no
+1:07
+issues with a third party being down.
+1:09
+And finally, Customization. You can fine-tune models for accuracy and cost control.
+1:13
+Now, like any production application, LLM deployments need measurable targets.
+1:17
+We use service level objectives or SLOs to measure this.
+1:21
+Now, there's two dimensions to track.
+1:23
+First off is accuracy because a model that's
+1:25
+wrong isn't helpful. For example, a model that hallucinates
+1:28
+or gives off-brand answers isn't useful.
+1:31
+Your accuracy has to clear a usable threshold
+1:33
+and that threshold depends on your use case.
+1:35
+And this is where model cards come in.
+1:37
+On the right is an excerpt from Llama 3.1's model card,
+1:40
+comparing the original 70B model against an optimized smaller version of it.
+1:45
+Each row is a standardized benchmark. So you've got MMLU
+1:47
+for general knowledge, GSM8K for math, and so on.
+1:51
+That recovery column shows how much of the original
+1:54
+accuracy, the optimized version retains 99.88% on average.
+1:58
+And this is how you verify a
+2:00
+model meets your accuracy SLO before deploying it.
+2:03
+Second is inference performance.
+2:05
+And there's three latency metrics that really
+2:07
+matter. So, the time to first token.
+2:09
+This is the time taken to generate the first token of the
+2:13
+output, which indicates how long the user is waiting before seeing any response.
+2:17
+Then you've got the inter token latency.
+2:19
+That's the average time between generating consecutive tokens
+2:22
+in the output, excluding the first token.
+2:25
+And that helps assess the smoothness and speed of token generation.
+2:28
+And finally, you've got the request latency, the total
+2:31
+time from end to end. And don't forget about throughput.
+2:34
+Throughput is the average number of output
+2:36
+tokens generated per second across all requests.
+2:39
+In other words, can your system handle production level scale?
+2:42
+See, small gaps in either dimension can
+2:44
+mean big issues later on down the road.
+2:46
+And to be useful, an LLM must
+2:48
+both be fast enough and accurate enough.
+2:51
+Now, let's see what it actually takes
+2:53
+to run them, starting with the hardware.
+2:55
+GPU memory has to hold two
+2:57
+things. First off is the model weights.
+3:00
+These occupy a fixed space whether
+3:02
+you're serving one user or 100 users.
+3:04
+And the KV cache. This is a working memory
+3:07
+that grows with every token and every active request.
+3:11
+We're going to be unpacking both
+3:12
+in the next lesson, but for now,
+3:14
+let's think about the hardware requirements to run an LLM.
+3:17
+For our example, we're going to
+3:18
+take Llama 3 at 70 billion parameters.
+3:22
+And the weights alone need about 140 gigabytes
+3:24
+because a parameter is roughly about two bytes.
+3:27
+So you need at least two 80
+3:30
+gigabyte GPUs just to load the model.
+3:32
+In practice, you would deploy it on four 80 gigabyte GPUs.
+3:36
+That's the standard production unit for a 70B class model,
+3:39
+giving you 320 gigabytes total,
+3:42
+which leaves about 180 gigabytes for everything else.
+3:46
+That everything else is the KV cache.
+3:48
+For Llama 3 70B, one long context request
+3:52
+at 32000 tokens needs about 10 gigabytes in KV cache by itself.
+3:57
+So with 180 gigabytes of headroom,
+3:59
+you can serve 18 long-context users in parallel.
+4:02
+However, a naive serving setup with no memory optimization
+4:06
+can lead to poor memory management and reduce the
+4:08
+number of users that can be served in parallel
+4:10
+from 18 down to just two or three.
+4:12
+And that is the gap that we're closing.
+4:15
+This course covers two categories
+4:16
+of optimization to save on infrastructure requirements
+4:19
+while speeding up inference for our users.
+4:21
+You've got Model Optimizations and Inference Optimizations.
+4:25
+Model Optimizations are applied to the model itself
+4:28
+before you even deploy it,
+4:30
+using techniques like Quantization and Sparsification.
+4:33
+The goal is to reduce the model's memory footprint
+4:35
+and computational requirements
+4:37
+while preserving as much accuracy as possible.
+4:40
+With Inference Optimizations,
+4:41
+these happen at runtime
+4:43
+in the inference engine itself.
+4:45
+is where techniques like Continuous batching, Prefix caching and PagedAttention come in.
+4:50
+And these don't change the model, but
+4:51
+they change how efficiently you run it.
+4:53
+And don't worry if you're not familiar with these topics,
+4:56
+you're going to be learning about them in this course.
+4:58
+Now, here's a reality of deploying AI models.
+5:01
+You're always going to be balancing between performance, accuracy, and cost.
+5:05
+Performance could be measured in terms of latency and throughput.
+5:08
+Because real-time latency is critical so your users aren't waiting around,
+5:12
+but that high throughput
+5:13
+often requires more compute.
+5:15
+At the same time, accuracy is needed for trust,
+5:17
+but the larger models with perhaps higher evaluations tend to cost more.
+5:22
+And we also need to keep infrastructure costs down.
+5:25
+But significant model optimization can hurt accuracy.
+5:28
+So, most deployments have to pick two.
+5:30
+However, the right tooling and techniques can push those limits,
+5:33
+and that's exactly what this course is about.
+5:35
+Let's take a look at LLM deployment cost.
+5:38
+With a naive LLM deployment of Llama
+5:40
+where we load full precision weights,
+5:42
+and process one request at a time,
+5:44
+it can be quite expensive.
+5:46
+Hundreds of thousands to millions of dollars every month
+5:49
+to serve the thousands of users
+5:50
+that may be using the AI application.
+5:52
+Now, let's add in Continuous Batching
+5:54
+and management of KV cache
+5:56
+using PagedAttention with vLLM,
+5:58
+a production inference server.
+6:00
+You're batching multiple requests together.
+6:02
+The throughput improvement here is dramatic.
+6:05
+And instead of millions, we're saving
+6:07
+almost 10 times the cost. Finally, add model optimization.
+6:10
+using the same vLLM deployment but with a quantized model.
+6:14
+You've cut the memory footprint, sped up weight loading,
+6:16
+and you're using the GPU's hardware more efficiently.
+6:19
+This is where your mind might get blown.
+6:21
+But before we dive into the model and inference optimizations,
+6:25
+the next lesson takes a step back
+6:27
+to cover the inference and memory fundamentals.
+6:28
+So what actually happens when a model generates a token,
+6:31
+where the weights and KV cache live on the GPU,
+6:34
+and how data moves inside the GPU.
+6:37
+We'll see you there.

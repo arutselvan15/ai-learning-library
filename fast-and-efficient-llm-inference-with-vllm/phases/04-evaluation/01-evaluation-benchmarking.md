@@ -4,6 +4,8 @@
 
 Measure deployment performance and model quality together.
 
+Source transcript: [Evaluation lab](../../transcripts/04-evaluation/01-evaluation-lab.txt) and [references](../../transcripts/04-evaluation/references.txt)
+
 ## Notebook
 
 Work through the [evaluation lab notebook](01-evaluation-lab.ipynb).

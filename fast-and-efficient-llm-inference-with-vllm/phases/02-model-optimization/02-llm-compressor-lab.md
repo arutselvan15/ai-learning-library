@@ -4,6 +4,8 @@
 
 Compress a model and validate the result instead of trusting theoretical bit reduction.
 
+Source transcript: [LLM Compressor lab](../../transcripts/02-model-optimization/02-llm-compressor-lab.txt)
+
 ## Notebook
 
 Work through the [LLM Compressor lab notebook](02-llm-compressor-lab.ipynb).

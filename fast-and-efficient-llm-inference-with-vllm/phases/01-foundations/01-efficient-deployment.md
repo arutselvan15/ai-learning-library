@@ -4,6 +4,8 @@
 
 Establish the business and engineering motivation for efficient inference.
 
+Source transcript: [Why efficient LLM deployment matters](../../transcripts/01-foundations/01-why-efficient-llm-deployment-matters.txt)
+
 ## Learning Objectives
 
 - Explain why inference cost can dominate after training.

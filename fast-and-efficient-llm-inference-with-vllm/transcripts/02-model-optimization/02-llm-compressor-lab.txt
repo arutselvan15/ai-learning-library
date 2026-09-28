@@ -1,0 +1,474 @@
+0:00
+In the previous lesson, you learned about quantization.
+0:02
+what it is, why it matters, and how
+0:04
+it reduces the cost of running AI models.
+0:07
+But in this lesson, you're going to actually do it.
+0:09
+We'll take a full precision model, compress
+0:11
+it with a tool called LLM Compressor,
+0:13
+and compare the sizes before and after.
+0:15
+We'll also measure whether the compressed model still works well.
+0:19
+So, it's time to compress some weights.
+0:21
+Here's the steps for compressing an LLM
+0:23
+using the LLM Compressor open source tool.
+0:26
+There's going to be four steps. First off
+0:28
+is choosing a model like one from Hugging Face.
+0:30
+The second step is picking the algorithm,
+0:32
+as different algorithms have different tradeoffs in terms
+0:35
+of compression speed and the retention of their accuracy.
+0:39
+Next is choosing the Quantization Scheme,
+0:41
+where you decide the precision for weights and activations of the model.
+0:45
+And finally is inference with vLLM,
+0:48
+because once you have a compressed model,
+0:50
+Inference engines like vLLM can load it directly,
+0:52
+but we'll talk about that in the next lesson.
+0:54
+When you're choosing a model, typically you'll start from either Hugging Face,
+0:57
+which is like the GitHub of models,
+1:00
+or an internal registry within your own organization.
+1:03
+But that's not all because most quantization algorithms
+1:06
+need representative data to calibrate the compression.
+1:09
+They use that data to understand which weights matter most
+1:12
+and how to minimize accuracy loss during quantization.
+1:15
+Here's a comparison of the main algorithms available in LLM Compressor,
+1:19
+the open source tool that you'll be using today.
+1:21
+And we'll dive into a few
+1:23
+of these here in just a second.
+1:24
+Round-to-nearest is the simplest. It's fastest to run
+1:27
+and it gives you a good baseline to start from.
+1:29
+AWQ or activation aware weight quantization
+1:31
+gives the best balance of accuracy and speed, especially on NVIDIA hardware.
+1:36
+But GPTQ is the industry standard.
+1:39
+Although it can require more VRAM to be needed during compression.
+1:43
+Sparse-GPT handles sparsification,
+1:45
+but only in unique cases using
+1:47
+specific hardware like the NVIDIA H100.
+1:50
+And finally, you can reshape the weights or activations
+1:53
+before compressing them with one of these algorithms,
+1:55
+so that less information is lost.
+1:58
+Smoothing flattens the spikes that the model might have,
+2:01
+and transformations apply rotations to the weights
+2:03
+to lose less information when you're going to quantize.
+2:07
+The simplest approach is Round-to-nearest, which is exactly what it sounds like.
+2:11
+Each weight is rounded to the nearest value in the target precision.
+2:14
+So, there's no calibration data needed and it's
+2:16
+very fast to run, but you get accuracy degradation
+2:19
+specifically at lower bits like int4.
+2:23
+So, it's a good baseline but not the
+2:25
+right choice for production. So, what approaches work better?
+2:28
+Let's start with AWQ, which is quite
+2:30
+popular and based off of an interesting observation
+2:32
+that not all weights are equally important.
+2:35
+And some weights, when you change them even slightly,
+2:37
+cause large changes in the model's outputs.
+2:40
+Others can be rounded quite aggressively without much effect.
+2:43
+And so what AWQ does is it figures out
+2:45
+which is which by looking at the activation magnitudes
+2:48
+during a pass of calibration data.
+2:51
+So weights that correspond to large activations
+2:54
+are treated more carefully,
+2:56
+and the rest are compressed more aggressively.
+2:58
+AWQ is also computationally lighter
+3:01
+than the next algorithm GPTQ.
+3:03
+So calibration runs faster and requires less VRAM.
+3:06
+GPTQ takes a more mathematically rigorous approach.
+3:09
+Its idea is that given we're going to quantize this model
+3:12
+and introduce some error, how do we
+3:14
+compensate for that error in the remaining weights
+3:17
+so that the overall output changes as little as possible.
+3:19
+To do this, it computes the Hessian
+3:21
+of the loss with respect to the weights.
+3:24
+Essentially a measure of the curvature that tells you
+3:26
+how sensitive the model output is
+3:28
+to changes in each specific weight.
+3:30
+And then it works through the weights layer by layer,
+3:33
+quantizing each one and updating the remaining weights to compensate.
+3:36
+As computing and inverting those Hessians is quite expensive,
+3:40
+the result is very high accuracy, often better than AWQ
+3:43
+on certain benchmarks, although the tradeoff
+3:45
+is more compute and memory costs needed.
+3:47
+As computing and inverting those Hessians is expensive.
+3:50
+GPTQ is also the most widely supported algorithm
+3:53
+and a safe choice for sharing a quantized model with others.
+3:56
+Now, let's move to the notebook where we're
+3:58
+going to use the open source LLM compressor tool
+4:00
+to quantize a model and compare the
+4:02
+difference before and after we do this compression.
+4:05
+First, we'll import our standard libraries like torch,
+4:08
+the Hugging Face transformers for loading models and tokenizers.
+4:12
+And we're going to be working with Qwen3-0.6B as our base model.
+4:15
+It's small enough to work with in this
+4:17
+environment, but it's a real capable language model.
+4:19
+And you've got folders for both the original
+4:21
+and quantized model weights in your environment already.
+4:24
+Now, we need to specify a recipe
+4:26
+which tells LLM Compressor how to quantize.
+4:29
+We're going to be using the GPTQ algorithm today, using
+4:32
+calibration data to find the optimal quantized values for each weight.
+4:36
+And then we're going to be
+4:38
+going for four-bit weights and 16-bit activations.
+4:41
+which can lead to a roughly 50% total reduction for this model.
+4:44
+We're also going to be targeting the Linear
+4:46
+layers where the vast majority of parameters live,
+4:48
+and ignoring the lm_head,
+4:50
+which is the output layer that maps tokens to vocabularies
+4:53
+so that we can keep this compressed model also precise.
+4:56
+Now, a recipe could be a list of quantization algorithms,
+4:59
+but for here we're using just one algorithm.
+5:02
+Now, to produce the quantized model,
+5:04
+we need to import oneshot. It takes the model
+5:07
+along with some calibration data.
+5:10
+and a recipe together to tell us how to do compression
+5:13
+in a single pass. That recipe is right from here.
+5:17
+Now, the dataset parameter. Let's take a look at this
+5:20
+because this specifies what text to use for calibration
+5:23
+and here we're going to be using wikitext 2,
+5:25
+a standard benchmark of Wikipedia articles
+5:28
+and the same dataset you'll use later on for perplexity evaluation.
+5:32
+the max_seq_length here
+5:34
+and the number of calibration samples
+5:36
+control the calibration pass that we're
+5:39
+going to do with that dataset.
+5:42
+So the num_calibration_samples is how many sequences are run through the model.
+5:46
+More samples give a better picture of weight importance,
+5:49
+but past a few hundred, the accuracy gains become tiny
+5:52
+while runtime keeps growing.
+5:54
+So 256 is a solid default.
+5:56
+Now, the max sequence length.
+5:58
+This is the max token length per sample that we're using.
+6:01
+So longer sequences let the quantizer see
+6:04
+how weights behave across realistic context lengths.
+6:08
+And samples beyond this get truncated.
+6:10
+These parameters all help to improve accuracy as we go
+6:13
+from default full precision of BFloat16 to INT4 precision.
+6:17
+of these weights. Since quantization can take several minutes
+6:20
+and benefits from a GPU, we've already run it ahead of time
+6:23
+and provided the quantized model in the output directory folder,
+6:27
+which is Qwen3-0.6B W4A16.
+6:30
+This if statement just checks and makes sure
+6:33
+that we skip rerunning quantization when the folder already exists
+6:36
+so that you can move straight to evaluation.
+6:41
+Awesome. So let's see what quantization actually saved us.
+6:44
+This cell here goes through both model directories,
+6:46
+the original released model and the quantized model,
+6:49
+and prints a comparison of the sizes of both models.
+6:54
+Now, you might expect a 75% reduction
+6:56
+since we went from 16-bit to 4-bit weights,
+7:00
+but the actual reduction is 42%.
+7:02
+And the reason for that is that the linear layer weights
+7:04
+are the only ones that are quantized for. The rest of the model,
+7:08
+including the LM head and normalization layers stay at a higher precision.
+7:12
+So, this four times compression applies to the bulk of the parameters,
+7:15
+which are the linear layers that dominate the model.
+7:18
+But the unquantized pieces pull the overall reduction down to 42%.
+7:23
+This ratio improves with larger models where the linear weights
+7:26
+make up an even bigger share of the total size,
+7:28
+like a 70B model quantized the same way
+7:31
+gets much closer to the theoretical four times compression of the model.
+7:35
+But smaller model sizes are only useful if the model still works.
+7:39
+So, let's do a comparison of both using the same prompt.
+7:42
+First, we're going to load in the base_model
+7:45
+with its original weights on cpu
+7:47
+and give it a prompt machine learning is a branch of
+7:51
+And we're going to generate 60 tokens with standard sampling settings.
+7:55
+This is going to act as our baseline.
+7:58
+Take a look at the response of this model
+8:00
+and we'll compare this with the quantized model here in a second.
+8:05
+Now we're using the quantized model with
+8:07
+the exact same prompt and generation settings.
+8:10
+The only difference is that the model has four-bit weights
+8:13
+instead of 16-bit. So, let's run this cell.
+8:16
+Now, it'll probably take some time on
+8:18
+your environment to get that response back.
+8:20
+Here's the output, and let's compare the results between both models.
+8:24
+The quantized model should produce output similar to the baseline,
+8:28
+maybe not word for word, but quite similar to the original model.
+8:31
+That's huge compression but at a
+8:33
+minimal quality loss, and that's the goal.
+8:36
+Side-by-side text gives you an intuition,
+8:39
+but we need a number, and that's where perplexity comes in.
+8:42
+It's a standard metric for language models
+8:44
+that measures how well the model predicts text.
+8:47
+So, lower is better, and if quantization has degraded the model,
+8:50
+then the perplexity will be noticeably higher.
+8:54
+Here we define a calculate_perplexity function
+8:56
+that takes a chunk from the wikitext-2 dataset
+8:59
+and slides a window across it.
+9:02
+So at each position, it's computing the cross-entropy loss
+9:05
+between the model's predicted next token distribution and the actual next token.
+9:09
+essentially how surprised the model is
+9:11
+by the token that actually came next.
+9:13
+And when we exponentiate the average loss,
+9:16
+that gives us what's known as perplexity.
+9:18
+And each window moves forward by stride
+9:20
+tokens and overlaps with the previous one.
+9:23
+The sliding window with stride lets us evaluate
+9:25
+long text without feeding it all at once,
+9:27
+while still giving each token a reasonable amount of left context.
+9:32
+We load the test split. It's the same data set
+9:34
+as the calibration data, but a held out portion
+9:37
+so that there's no data leakage.
+9:39
+Now, let's compute perplexity for the quantized model first,
+9:41
+as it's already in memory.
+9:43
+It'll take a moment as we're running
+9:45
+the full test data through the model.
+9:47
+So we've got a result back
+9:49
+for our quantized model perplexity at 35.48
+9:51
+Now, let's run it for our base model as well.
+9:54
+Once the base perplexity calculation came back,
+9:57
+now we have a 32.79 that we can use to compare between
+10:01
+the original model and the quantized model side by side.
+10:04
+We'll use this simple calculation in
+10:06
+order to calculate the difference in perplexity
+10:08
+between the base model and that quantized model.
+10:11
+And for us, it's about 8%
+10:14
+But remember, the lower perplexity is better.
+10:17
+And the question is whether this
+10:18
+increase is acceptable for your use case.
+10:20
+Because for most production deployments,
+10:23
+a few percent increase in perplexity is well worth
+10:26
+the reduction in model size and infrastructure savings that come with it.
+10:29
+Okay, so let's recap. You've
+10:31
+learned how the one shot API from LLM Compressor
+10:34
+applies post-training quantization with a GPTQ recipe.
+10:38
+You compared model sizes
+10:40
+and saw the concrete reduction from W4A16 quantization.
+10:43
+And tested both models on the same prompt
+10:46
+to verify that the output still makes sense.
+10:48
+And you measured perplexity to put a number on that accuracy tradeoff.
+10:51
+In the next lesson, we're going to switch over to inference optimizations
+10:55
+and learn more about vLLM. We'll see you there.
