@@ -6,9 +6,9 @@ Improve a fixed model with instructions and examples, then evaluate whether the 
 
 ## Chapters
 
-1. [Prompting and generation](../01-prompting.md)
-2. [Lab 1 - Dialogue summarization](../02-lab-prompting.md)
-3. [Evaluation](../03-evaluation.md)
+1. [Prompting and generation](01-prompting/README.md)
+2. [Lab 1 - Dialogue summarization](02-lab-prompting/README.md)
+3. [Evaluation](03-evaluation/README.md)
 
 ## Checkpoint
 

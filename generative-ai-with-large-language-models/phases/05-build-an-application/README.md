@@ -6,8 +6,8 @@ Choose the right application intervention, optimize serving, connect authorized 
 
 ## Chapters
 
-1. [Serving optimization](../01-optimization.md)
-2. [LLM applications](../02-applications.md)
+1. [Serving optimization](01-optimization/README.md)
+2. [LLM applications](02-applications/README.md)
 
 ## Checkpoint
 

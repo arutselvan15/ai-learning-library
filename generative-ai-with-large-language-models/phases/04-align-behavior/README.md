@@ -6,8 +6,8 @@ Understand how human preferences become training data, reward models, and reinfo
 
 ## Chapters
 
-1. [RLHF](../01-rlhf.md)
-2. [Lab 3 - Less-toxic summaries](../02-lab-rlhf.md)
+1. [RLHF](01-rlhf/README.md)
+2. [Lab 3 - Less-toxic summaries](02-lab-rlhf/README.md)
 
 ## Checkpoint
 

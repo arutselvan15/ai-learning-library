@@ -1,12 +1,12 @@
 # Chapter 1 - Alignment and Reinforcement Learning from Human Feedback
 
-[Previous: Phase 3, Chapter 2: Lab 2](../03-adapt-a-model/02-lab-fine-tuning.md) | [Contents](../../README.md) | Next: [Chapter 2: Lab 3](02-lab-rlhf.md)
+[Previous: Phase 3, Chapter 2: Lab 2](../../03-adapt-a-model/02-lab-fine-tuning/README.md) | [Contents](../../../README.md) | Next: [Chapter 2: Lab 3](../02-lab-rlhf/README.md)
 
 ## Why another training step?
 
 Following an instruction does not guarantee a response is helpful, honest, or harmless. A model might sound confident when it is wrong or produce unsafe text. Evaluation and governance remain necessary even after alignment. **RLHF** is one way to optimize behavior based on a preference signal that is harder to describe using a simple supervised target.
 
-![Examples of model behavior that may fail helpfulness, honesty or harmlessness](../../assets/rlhf/bad-response.png)
+![Examples of model behavior that may fail helpfulness, honesty or harmlessness](assets/bad-response.png)
 
 ## The preference-to-policy loop
 
@@ -15,9 +15,9 @@ Following an instruction does not guarantee a response is helpful, honest, or ha
 3. The **policy model** generates responses. The reward model scores them, and a reinforcement learning method such as PPO updates the policy toward higher rewards. A reference policy and KL penalty can limit how far the new policy moves from the starting one.
 4. Evaluate the revised model on held-out tasks and risks. Repeatedly optimizing a proxy can lead to reward hacking rather than genuinely better answers.
 
-![Human ranking of model responses](../../assets/rlhf/human-feedback.png)
+![Human ranking of model responses](assets/human-feedback.png)
 
-![Reward model and policy update in an RLHF loop](../../assets/rlhf/reward-model.png)
+![Reward model and policy update in an RLHF loop](assets/reward-model.png)
 
 The third lab simplifies this pattern. Rather than collecting human rankings in the notebook and training a new reward model from them, it uses a pretrained hate-speech classifier as a reward signal. A reduced classifier score on one dimension is not proof of safe or faithful summaries. More advanced approaches, such as AI-assisted feedback, still need criteria, oversight, and independent evaluation.
 
@@ -29,4 +29,4 @@ During PPO, a KL-divergence penalty measures how far the policy's token probabil
 
 **Checkpoint:** What is the difference between the summary-generating policy and the reward model? What failure would result from maximizing a reward score without checking output quality?
 
-Sources: [RLHF motivation](../../lecture-transcripts/model-misbehavior.md), [human feedback](../../lecture-transcripts/collecting-human-preferences.md), [reward model](../../lecture-transcripts/training-a-reward-model.md), [PPO](../../lecture-transcripts/ppo-in-the-rlhf-loop.md), [reward hacking](../../lecture-transcripts/rlhf-recap-and-reward-hacking.md), [scalable feedback](../../lecture-transcripts/scaling-feedback-and-constitutional-ai.md); [Week 3 slides](../../slides/Week3.pdf).
+Sources: [RLHF motivation](transcripts/model-misbehavior.md), [human feedback](transcripts/collecting-human-preferences.md), [reward model](transcripts/training-a-reward-model.md), [PPO](transcripts/ppo-in-the-rlhf-loop.md), [reward hacking](transcripts/rlhf-recap-and-reward-hacking.md), [scalable feedback](transcripts/scaling-feedback-and-constitutional-ai.md); [Week 3 slides](../../../slides/Week3.pdf).

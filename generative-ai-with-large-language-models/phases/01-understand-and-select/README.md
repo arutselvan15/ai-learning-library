@@ -6,9 +6,9 @@ Define a generative AI project, understand transformer model families, and reaso
 
 ## Chapters
 
-1. [The project lifecycle](../01-project-lifecycle.md)
-2. [Tokens and transformers](../02-transformers.md)
-3. [Pre-training and compute](../03-pretraining-compute.md)
+1. [The project lifecycle](01-project-lifecycle/README.md)
+2. [Tokens and transformers](02-transformers/README.md)
+3. [Pre-training and compute](03-pretraining-compute/README.md)
 
 ## Checkpoint
 

@@ -30,6 +30,6 @@ Understand the lifecycle of a generative AI project: select a model, prompt and 
 - [Quick reference](quick-reference.md)
 - [Setup](setup.md)
 - [Resources and examples](resources.md)
-- [Transcripts](transcripts/)
+- [Source transcripts](phases/01-understand-and-select/README.md)
 - [Slides](slides/)
-- [Labs](labs/)
+- [Labs](phases/02-prompt-and-evaluate/README.md)

@@ -6,8 +6,8 @@ Understand when prompting is insufficient and compare full fine-tuning with para
 
 ## Chapters
 
-1. [Fine-tuning and PEFT](../01-fine-tuning.md)
-2. [Lab 2 - Fine-tune a summarizer](../02-lab-fine-tuning.md)
+1. [Fine-tuning and PEFT](01-fine-tuning/README.md)
+2. [Lab 2 - Fine-tune a summarizer](02-lab-fine-tuning/README.md)
 
 ## Checkpoint
 
